@@ -1,0 +1,166 @@
+{
+  "Slovenian": {
+    "glottocode": "slov1268",
+    "case_richness": 1.0,
+    "head_finality_grambank": 0.0,
+    "raw": {
+      "GB070": "1",
+      "GB071": "1",
+      "GB072": "1",
+      "GB073": "1",
+      "GB075": "0",
+      "GB133": "0",
+      "GB328": "0",
+      "GB422": "0"
+    }
+  },
+  "French": {
+    "glottocode": "stan1290",
+    "case_richness": 0.25,
+    "head_finality_grambank": 0.0,
+    "raw": {
+      "GB070": "0",
+      "GB071": "1",
+      "GB072": "0",
+      "GB073": "0",
+      "GB075": "0",
+      "GB133": "0",
+      "GB328": "0",
+      "GB422": "0"
+    }
+  },
+  "English": {
+    "glottocode": "stan1293",
+    "case_richness": 0.25,
+    "head_finality_grambank": 0.0,
+    "raw": {
+      "GB070": "0",
+      "GB071": "1",
+      "GB072": "0",
+      "GB073": "0",
+      "GB075": "0",
+      "GB133": "0",
+      "GB328": "0",
+      "GB422": "0"
+    }
+  },
+  "Turkish": {
+    "glottocode": "nucl1301",
+    "case_richness": 1.0,
+    "head_finality_grambank": 0.75,
+    "raw": {
+      "GB070": "1",
+      "GB071": "1",
+      "GB072": "1",
+      "GB073": "1",
+      "GB075": "1",
+      "GB133": "1",
+      "GB328": "1",
+      "GB422": "0"
+    }
+  },
+  "Arabic": {
+    "glottocode": "stan1318",
+    "case_richness": 1.0,
+    "head_finality_grambank": 0.0,
+    "raw": {
+      "GB070": "1",
+      "GB071": "1",
+      "GB072": "1",
+      "GB073": "?",
+      "GB075": "0",
+      "GB133": "0",
+      "GB328": "0"
+    }
+  },
+  "Japanese": {
+    "glottocode": "nucl1643",
+    "case_richness": 1.0,
+    "head_finality_grambank": 1.0,
+    "raw": {
+      "GB070": "1",
+      "GB071": "1",
+      "GB072": "1",
+      "GB073": "1",
+      "GB075": "1",
+      "GB133": "1",
+      "GB328": "1",
+      "GB422": "1"
+    }
+  },
+  "Korean": {
+    "glottocode": "kore1280",
+    "case_richness": 0.75,
+    "head_finality_grambank": 1.0,
+    "raw": {
+      "GB070": "1",
+      "GB071": "0",
+      "GB072": "1",
+      "GB073": "1",
+      "GB075": "1",
+      "GB133": "1",
+      "GB328": "1",
+      "GB422": "1"
+    }
+  },
+  "Hindi": {
+    "glottocode": "hind1269",
+    "case_richness": 1.0,
+    "head_finality_grambank": 0.75,
+    "raw": {
+      "GB070": "1",
+      "GB071": "1",
+      "GB072": "1",
+      "GB073": "1",
+      "GB075": "1",
+      "GB133": "1",
+      "GB328": "1",
+      "GB422": "0"
+    }
+  },
+  "Finnish": {
+    "glottocode": "finn1318",
+    "case_richness": 1.0,
+    "head_finality_grambank": 0.25,
+    "raw": {
+      "GB070": "1",
+      "GB071": "1",
+      "GB072": "1",
+      "GB073": "1",
+      "GB075": "1",
+      "GB133": "0",
+      "GB328": "0",
+      "GB422": "0"
+    }
+  },
+  "Chinese": {
+    "glottocode": "mand1415",
+    "case_richness": 0.0,
+    "head_finality_grambank": 0.25,
+    "raw": {
+      "GB070": "0",
+      "GB071": "0",
+      "GB072": "0",
+      "GB073": "0",
+      "GB075": "0",
+      "GB133": "0",
+      "GB328": "1",
+      "GB422": "0"
+    }
+  },
+  "Russian": {
+    "glottocode": "russ1263",
+    "case_richness": 1.0,
+    "head_finality_grambank": 0.25,
+    "raw": {
+      "GB070": "1",
+      "GB071": "1",
+      "GB072": "1",
+      "GB073": "1",
+      "GB075": "0",
+      "GB133": "1",
+      "GB328": "0",
+      "GB422": "0"
+    }
+  }
+}

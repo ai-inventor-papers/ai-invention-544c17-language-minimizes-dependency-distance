@@ -1,0 +1,507 @@
+{
+  "metadata": {
+    "evaluation_name": "tail_index_vs_mdd_register_typology",
+    "description": "Evaluates whether GPD tail index xi carries information beyond MDD for spoken/written register discrimination and typological prediction across 18 UD treebanks. gen_art_experiment_1 crashed and produc...",
+    "experiment_status": {
+      "experiment_dir_exists": true,
+      "n_non_venv_files_in_experiment_dir": 387,
+      "n_json_outputs_in_experiment_dir": 4,
+      "experiment_produced_output": true
+    },
+    "model_comparison_register_independence": {
+      "model1_mdd_only": {
+        "aic": -30.831409745124304,
+        "bic": -27.49855636889944,
+        "aicc": -28.985255898970458,
+        "akaike_weight": 0.4934396100585926,
+        "r2_marginal": 0.4372182089291873,
+        "r2_conditional": 0.437571077693851,
+        "singular": false,
+        "register_coef": null,
+        "register_p": null
+      },
+      "model2_register_plus_mdd": {
+        "aic": -32.37107536388763,
+        "bic": -28.205008643606547,
+        "aicc": -29.037742030554295,
+        "akaike_weight": 0.5065603899414075,
+        "r2_marginal": 0.526362940211352,
+        "r2_conditional": 0.6404073006064592,
+        "singular": false,
+        "register_coef": 0.09690446185340387,
+        "register_p": 0.0018522661630369763,
+        "mdd_coef": 0.15778841525865717
+      },
+      "delta_aicc_model2_minus_model1": -0.05248613158383719,
+      "register_improves_fit": true,
+      "r2_marginal_gain_model1_to_2": 0.08914473128216471,
+      "r2_conditional_gain_model1_to_2": 0.20283622291260822,
+      "model3_mdd_on_register": {
+        "aic": 31.44169518138584,
+        "bic": 35.0031822129705,
+        "register_coef": -0.22803993104075254,
+        "register_p": 0.29199363053860405,
+        "r2_marginal": 0.02639922962370521,
+        "r2_conditional": 0.6477579770474357,
+        "singular": false
+      }
+    },
+    "variance_partitioning": {
+      "formula": "xi_90 ~ register_bin + head_finality_z + case_richness_z + word_order_flexibility_z + (1|family)",
+      "r2_marginal": 0.8507264299321233,
+      "r2_conditional": 0.8507264300001394,
+      "family_variance_pct_of_total": 6.8016037246820815e-09,
+      "standardized_slopes": {
+        "register_bin": 0.11248358070173453,
+        "head_finality_empirical_z": -0.08378821989400011,
+        "case_richness_z": -0.0038835047784275436,
+        "word_order_flexibility_z": 0.03962002442851419
+      },
+      "slope_ci_95": {
+        "register_bin": [
+          0.06233236641896329,
+          0.16263479498450578
+        ],
+        "head_finality_empirical_z": [
+          -0.10523872359583386,
+          -0.062337716192166354
+        ],
+        "case_richness_z": [
+          -0.026242234488305045,
+          0.018475224931449957
+        ],
+        "word_order_flexibility_z": [
+          0.018540586513982136,
+          0.060699462343046254
+        ]
+      },
+      "slope_p_values": {
+        "register_bin": 1.1027376330545117e-05,
+        "head_finality_empirical_z": 1.9203397001642472e-14,
+        "case_richness_z": 0.7335345096431453,
+        "word_order_flexibility_z": 0.0002297231958427004
+      },
+      "semi_partial_r2_marginal_drop": {
+        "register_bin": 0.17588920073755987,
+        "head_finality_empirical_z": 0.5913023430364068,
+        "case_richness_z": 0.004142664953102226,
+        "word_order_flexibility_z": 0.1205338445672115
+      },
+      "singular_fit": true,
+      "n_treebanks": 16
+    },
+    "within_language_paired_register_comparison": {
+      "pairs": [
+        {
+          "language": "English",
+          "spoken_treebank": "en_eslspok",
+          "written_treebank": "en_ewt"
+        },
+        {
+          "language": "French",
+          "spoken_treebank": "fr_rhapsodie",
+          "written_treebank": "fr_gsd"
+        },
+        {
+          "language": "Slovenian",
+          "spoken_treebank": "sl_sst",
+          "written_treebank": "sl_ssj"
+        }
+      ],
+      "treebank_level_direction": {
+        "n_pairs": 4,
+        "pct_spoken_lower_xi": 25.0,
+        "pct_spoken_lower_mdd": 50.0,
+        "median_xi_diff_spoken_minus_written": 0.05372391747333758,
+        "median_mdd_diff_spoken_minus_written": -0.2940735343143015,
+        "xi_diff_ci_lo": -0.10189783025624677,
+        "xi_diff_ci_hi": 0.16931615673410091,
+        "mdd_diff_ci_lo": -0.6827123755396327,
+        "mdd_diff_ci_hi": 0.1532556154749245,
+        "note": "Treebank-level direction summary has only n=4 language pairs (one degree of freedom per language) so it is a descriptive tally, not a powered test; the Wilcoxon signed-rank test below instead pairs on..."
+      },
+      "length_bin_wilcoxon_normalized_distance": {
+        "n_bins": 39,
+        "statistic": 203.0,
+        "p_value": 0.008191296496079303,
+        "approx_z": -2.6440813575461357,
+        "n_arcs_total_across_pairs": 209982,
+        "effect_size_r": -0.004080080974777223,
+        "pct_bins_spoken_higher_norm_dist": 64.1025641025641
+      }
+    },
+    "leave_one_family_out_cv": {
+      "n_families": 7,
+      "n_treebanks_used": 16,
+      "xi_lofo": {
+        "macro_rmse": 0.06663327808202679,
+        "macro_mae": 0.06262815058172207,
+        "rmse_ci_lo": 0.04336910908837428,
+        "rmse_ci_hi": 0.09116900901314118,
+        "per_family_rmse": {
+          "Afro-Asiatic": 0.08667847777105814,
+          "Indo-European": 0.08017484940969334,
+          "Uralic": 0.08306103056598943,
+          "Japonic": 0.023980005476110205,
+          "Koreanic": 0.035046316554650944,
+          "Turkic": 0.12022114582211171,
+          "Sino-Tibetan": 0.03727112097457375
+        },
+        "mape_pct": 77.11286841793262
+      },
+      "mdd_lofo": {
+        "macro_rmse": 0.5099950690430383,
+        "macro_mae": 0.5007141360149424,
+        "rmse_ci_lo": 0.3304425835820663,
+        "rmse_ci_hi": 0.6881315573027783,
+        "per_family_rmse": {
+          "Afro-Asiatic": 0.3144183811866017,
+          "Indo-European": 0.6987875047758222,
+          "Uralic": 0.1618403853306667,
+          "Japonic": 0.8019905452144096,
+          "Koreanic": 0.22157514364695086,
+          "Turkic": 0.5467664959404419,
+          "Sino-Tibetan": 0.8245870272063747
+        },
+        "mape_pct": 18.358866081797526
+      },
+      "singular_or_failed_folds": []
+    },
+    "typological_correlations": {
+      "marginal_spearman": {
+        "xi_90_vs_head_finality_empirical": {
+          "rho": -0.5122549019607844,
+          "p_raw": 0.035526524116891015,
+          "ci_lo": -0.854229339407323,
+          "ci_hi": 0.0297013888888885,
+          "n": 17,
+          "p_holm": 0.20118328251697587
+        },
+        "mdd_vs_head_finality_empirical": {
+          "rho": -0.2776057791537668,
+          "p_raw": 0.2647097281537839,
+          "ci_lo": -0.7220656482725449,
+          "ci_hi": 0.3508346454119017,
+          "n": 18,
+          "p_holm": 1.0
+        },
+        "xi_90_vs_case_richness": {
+          "rho": -0.009901475429766745,
+          "p_raw": 0.9709684557117323,
+          "ci_lo": -0.5102038651058864,
+          "ci_hi": 0.5108644760579907,
+          "n": 16,
+          "p_holm": 1.0
+        },
+        "mdd_vs_case_richness": {
+          "rho": -0.1386206560167344,
+          "p_raw": 0.6086596881562976,
+          "ci_lo": -0.6141363104493154,
+          "ci_hi": 0.4014813590727192,
+          "n": 16,
+          "p_holm": 1.0
+        },
+        "xi_90_vs_word_order_flexibility": {
+          "rho": 0.21078431372549022,
+          "p_raw": 0.41674984855133407,
+          "ci_lo": -0.3592546583850932,
+          "ci_hi": 0.7249489435791255,
+          "n": 17,
+          "p_holm": 1.0
+        },
+        "mdd_vs_word_order_flexibility": {
+          "rho": 0.5025799793601652,
+          "p_raw": 0.03353054708616265,
+          "ci_lo": 0.025055934816119802,
+          "ci_hi": 0.8046524403080644,
+          "n": 18,
+          "p_holm": 0.20118328251697587
+        }
+      },
+      "partial_correlations_controlling_register": {
+        "partial_xi_90_vs_head_finality_empirical_given_register": {
+          "rho": -0.5465686274509804,
+          "p": 0.02319384337673323,
+          "n": 17,
+          "outcome_singular": false,
+          "feature_singular": false
+        },
+        "partial_xi_90_vs_case_richness_given_register": {
+          "rho": 0.0653334065259877,
+          "p": 0.8100273524041722,
+          "n": 16,
+          "outcome_singular": false,
+          "feature_singular": false
+        },
+        "partial_xi_90_vs_word_order_flexibility_given_register": {
+          "rho": 0.24019607843137256,
+          "p": 0.3530886590520007,
+          "n": 17,
+          "outcome_singular": false,
+          "feature_singular": false
+        },
+        "partial_mdd_vs_head_finality_empirical_given_register": {
+          "rho": -0.29411764705882354,
+          "p": 0.23614329729664102,
+          "n": 18,
+          "outcome_singular": false,
+          "feature_singular": false
+        },
+        "partial_mdd_vs_case_richness_given_register": {
+          "rho": 0.008909100889907415,
+          "p": 0.9738771646171329,
+          "n": 16,
+          "outcome_singular": false,
+          "feature_singular": false
+        },
+        "partial_mdd_vs_word_order_flexibility_given_register": {
+          "rho": 0.29205366357069146,
+          "p": 0.23960176390544208,
+          "n": 18,
+          "outcome_singular": false,
+          "feature_singular": false
+        }
+      }
+    },
+    "outlier_summary": {
+      "model_formula": "xi_90 ~ register_bin + head_finality_empirical + case_richness + word_order_flexibility",
+      "model_singular": true,
+      "n_outliers_flagged": 0,
+      "top_outliers": []
+    },
+    "sensitivity_analysis": {
+      "excl_flat_list_conj_appos": {
+        "per_treebank": [
+          {
+            "treebank_id": "ar_padt",
+            "xi_90": 0.24306805741722232,
+            "xi_90_excl_flat": 0.28412346971959246,
+            "xi_pct_change_excl_flat": 16.89050084927416,
+            "mdd": 4.183223233204537,
+            "mdd_excl_flat": 4.014890676049259,
+            "mdd_pct_change_excl_flat": -4.023991734869201
+          },
+          {
+            "treebank_id": "en_eslspok",
+            "xi_90": 0.05323032629859642,
+            "xi_90_excl_flat": 0.04975207923289646,
+            "xi_pct_change_excl_flat": -6.534333541727092,
+            "mdd": 2.681155561472409,
+            "mdd_excl_flat": 2.5838823012736056,
+            "mdd_pct_change_excl_flat": -3.628034926305575
+          },
+          {
+            "treebank_id": "en_ewt",
+            "xi_90": 0.04881946333509095,
+            "xi_90_excl_flat": 0.03725282078139318,
+            "xi_pct_change_excl_flat": -23.692686816947823,
+            "mdd": 3.3638679370120417,
+            "mdd_excl_flat": 3.345726542734573,
+            "mdd_pct_change_excl_flat": -0.539301619955478
+          }
+        ],
+        "mean_abs_pct_change_xi": 15.329476133426269,
+        "mean_abs_pct_change_mdd": 1.9653327683046544
+      },
+      "excl_small_treebanks_lt_20k_arcs": {
+        "excluded_treebanks": [
+          "en_eslspok",
+          "fr_rhapsodie",
+          "nap_rb"
+        ],
+        "n_remaining": 14,
+        "register_xi_corr_full": 0.07793913792341722,
+        "register_xi_corr_excl_small": 0.43262614982592623
+      },
+      "gpd_threshold_sensitivity": {
+        "xi_75_mean": 0.12100886166024488,
+        "xi_80_mean": 0.09509007679363242,
+        "xi_90_mean": 0.04803568594607835,
+        "xi_75_90_corr": 0.8930210131895472,
+        "xi_80_90_corr": 0.929459610278442
+      }
+    },
+    "diagnostics": {
+      "shapiro_wilk_xi90": {
+        "statistic": 0.964277603492244,
+        "p_value": 0.7127094863544692,
+        "normal_at_05": true
+      },
+      "shapiro_wilk_mdd": {
+        "statistic": 0.9808446619088429,
+        "p_value": 0.9583050579585872,
+        "normal_at_05": true
+      },
+      "singular_fit_flags": {
+        "model1_mdd_only": false,
+        "model2_register_mdd": false,
+        "model3_mdd_register": false,
+        "model4_full": true
+      },
+      "residual_homogeneity": {
+        "model1_mdd_only": {
+          "spearman_abs_resid_vs_fitted": 0.04656862745098039,
+          "p_value": 0.8591333762840924
+        },
+        "model2_register_mdd": {
+          "spearman_abs_resid_vs_fitted": 0.04411764705882353,
+          "p_value": 0.8664832749198726
+        },
+        "model3_mdd_register": {
+          "spearman_abs_resid_vs_fitted": 0.011720573293104003,
+          "p_value": 0.9631847071209401
+        },
+        "model4_full": {
+          "spearman_abs_resid_vs_fitted": 0.488235294117647,
+          "p_value": 0.05501502977813754
+        }
+      }
+    },
+    "typology_coverage_note": "Grambank typology (case_richness, head_finality_grambank) available for 16/18 treebanks; missing for ['nap_rb', 'pcm_nsc']. head_finality_empirical and word_order_flexibility are computed directly fro..."
+  },
+  "metrics_agg": {
+    "experiment_produced_output": 1.0,
+    "n_treebanks": 18.0,
+    "n_sentences_total": 33030.0,
+    "n_arcs_total": 558144.0,
+    "n_families": 8.0,
+    "n_within_language_register_pairs": 4.0,
+    "model1_aicc": -28.985255898970458,
+    "model2_aicc": -29.037742030554295,
+    "delta_aicc_register_vs_mdd_only": -0.05248613158383719,
+    "register_improves_fit_over_mdd_only": 1.0,
+    "model2_register_coefficient": 0.09690446185340387,
+    "model2_register_p_value": 0.0018522661630369763,
+    "model2_r2_marginal": 0.526362940211352,
+    "model2_r2_conditional": 0.6404073006064592,
+    "r2_marginal_gain_from_register": 0.08914473128216471,
+    "model3_mdd_register_coefficient": -0.22803993104075254,
+    "model3_mdd_register_p_value": 0.29199363053860405,
+    "variance_partition_r2_marginal": 0.8507264299321233,
+    "variance_partition_r2_conditional": 0.8507264300001394,
+    "family_variance_pct_of_total": 6.8016037246820815e-09,
+    "register_standardized_slope": 0.11248358070173453,
+    "head_finality_standardized_slope": -0.08378821989400011,
+    "case_richness_standardized_slope": -0.0038835047784275436,
+    "word_order_flex_standardized_slope": 0.03962002442851419,
+    "pct_pairs_spoken_lower_xi": 25.0,
+    "pct_pairs_spoken_lower_mdd": 50.0,
+    "median_xi_diff_spoken_minus_written": 0.05372391747333758,
+    "length_bin_wilcoxon_p_value": 0.008191296496079303,
+    "length_bin_wilcoxon_effect_size_r": -0.004080080974777223,
+    "length_bin_pct_spoken_higher_norm_dist": 64.1025641025641,
+    "lofo_xi_macro_rmse": 0.06663327808202679,
+    "lofo_xi_macro_mae": 0.06262815058172207,
+    "lofo_xi_mape_pct": 77.11286841793262,
+    "lofo_mdd_macro_rmse": 0.5099950690430383,
+    "lofo_mdd_macro_mae": 0.5007141360149424,
+    "n_lofo_singular_or_failed_folds": 0.0,
+    "n_outliers_flagged": 0.0,
+    "n_treebanks_scored_for_outliers": 16.0,
+    "shapiro_p_xi90": 0.7127094863544692,
+    "shapiro_p_mdd": 0.9583050579585872,
+    "n_singular_fits": 1.0,
+    "sensitivity_mean_abs_pct_change_xi_excl_flat": 15.329476133426269,
+    "sensitivity_mean_abs_pct_change_mdd_excl_flat": 1.9653327683046544,
+    "n_treebanks_excluded_small": 4.0,
+    "xi_threshold_75_90_correlation": 0.8930210131895472,
+    "xi_threshold_80_90_correlation": 0.929459610278442,
+    "spearman_xi_90_vs_head_finality_empirical": -0.5122549019607844,
+    "spearman_xi_90_vs_head_finality_empirical_p_holm": 0.20118328251697587,
+    "spearman_mdd_vs_head_finality_empirical": -0.2776057791537668,
+    "spearman_mdd_vs_head_finality_empirical_p_holm": 1.0,
+    "spearman_xi_90_vs_case_richness": -0.009901475429766745,
+    "spearman_xi_90_vs_case_richness_p_holm": 1.0,
+    "spearman_mdd_vs_case_richness": -0.1386206560167344,
+    "spearman_mdd_vs_case_richness_p_holm": 1.0,
+    "spearman_xi_90_vs_word_order_flexibility": 0.21078431372549022,
+    "spearman_xi_90_vs_word_order_flexibility_p_holm": 1.0,
+    "spearman_mdd_vs_word_order_flexibility": 0.5025799793601652,
+    "spearman_mdd_vs_word_order_flexibility_p_holm": 0.20118328251697587,
+    "partial_xi_90_vs_head_finality_empirical_given_register": -0.5465686274509804,
+    "partial_xi_90_vs_case_richness_given_register": 0.0653334065259877,
+    "partial_xi_90_vs_word_order_flexibility_given_register": 0.24019607843137256,
+    "partial_mdd_vs_head_finality_empirical_given_register": -0.29411764705882354,
+    "partial_mdd_vs_case_richness_given_register": 0.008909100889907415,
+    "partial_mdd_vs_word_order_flexibility_given_register": 0.29205366357069146
+  },
+  "datasets": [
+    {
+      "dataset": "treebank_level_xi_mdd_typology",
+      "examples": [
+        {
+          "input": "{\"treebank_id\": \"ar_padt\", \"language\": \"Arabic\", \"family\": \"Afro-Asiatic\", \"register\": \"written\"}",
+          "output": "{\"mdd\": 4.183223233204537, \"xi_90\": 0.24306805741722232, \"xi_80\": 0.4406231977306203, \"xi_75\": 0.5038063986009204, \"xi_90_normalized\": -1.023593928276913, \"head_finality_empirical\": 0.3143185157117731...",
+          "metadata_treebank_id": "ar_padt",
+          "metadata_language": "Arabic",
+          "metadata_family": "Afro-Asiatic",
+          "metadata_register": "written",
+          "predict_xi_90": "0.24306805741722232",
+          "predict_mdd": "4.183223233204537",
+          "eval_xi_z_score": -0.7188586105290408,
+          "eval_xi_residual": -0.030350844092129237,
+          "eval_is_outlier": 0.0
+        },
+        {
+          "input": "{\"treebank_id\": \"en_eslspok\", \"language\": \"English\", \"family\": \"Indo-European\", \"register\": \"spoken\"}",
+          "output": "{\"mdd\": 2.681155561472409, \"xi_90\": 0.05323032629859642, \"xi_80\": 0.06915156670638029, \"xi_75\": 0.0807431967021229, \"xi_90_normalized\": -0.47466672584241243, \"head_finality_empirical\": 0.6311656310989...",
+          "metadata_treebank_id": "en_eslspok",
+          "metadata_language": "English",
+          "metadata_family": "Indo-European",
+          "metadata_register": "spoken",
+          "predict_xi_90": "0.05323032629859642",
+          "predict_mdd": "2.681155561472409",
+          "eval_xi_z_score": -1.4713773646275083,
+          "eval_xi_residual": -0.062122849111638206,
+          "eval_is_outlier": 0.0
+        },
+        {
+          "input": "{\"treebank_id\": \"en_ewt\", \"language\": \"English\", \"family\": \"Indo-European\", \"register\": \"written\"}",
+          "output": "{\"mdd\": 3.3638679370120417, \"xi_90\": 0.04881946333509095, \"xi_80\": 0.14498091039703181, \"xi_75\": 0.20743589598444578, \"xi_90_normalized\": -0.7471380938342507, \"head_finality_empirical\": 0.615720583631...",
+          "metadata_treebank_id": "en_ewt",
+          "metadata_language": "English",
+          "metadata_family": "Indo-European",
+          "metadata_register": "written",
+          "predict_xi_90": "0.04881946333509095",
+          "predict_mdd": "3.3638679370120417",
+          "eval_xi_z_score": 0.4512235844444938,
+          "eval_xi_residual": 0.019051057414597505,
+          "eval_is_outlier": 0.0
+        }
+      ]
+    },
+    {
+      "dataset": "within_language_length_bin_pairs",
+      "examples": [
+        {
+          "input": "{\"language\": \"English\", \"len_bin\": \"(1.999, 4.0]\"}",
+          "output": "{\"spoken_mean_norm_dist\": 0.3779844871060172, \"written_mean_norm_dist\": 0.43989664159292036, \"diff\": -0.06191215448690318}",
+          "metadata_language": "English",
+          "eval_diff_spoken_minus_written": -0.06191215448690318
+        },
+        {
+          "input": "{\"language\": \"English\", \"len_bin\": \"(4.0, 5.0]\"}",
+          "output": "{\"spoken_mean_norm_dist\": 0.3408675799086758, \"written_mean_norm_dist\": 0.35294117647058826, \"diff\": -0.01207359656191248}",
+          "metadata_language": "English",
+          "eval_diff_spoken_minus_written": -0.01207359656191248
+        },
+        {
+          "input": "{\"language\": \"English\", \"len_bin\": \"(5.0, 7.0]\"}",
+          "output": "{\"spoken_mean_norm_dist\": 0.3160070686015831, \"written_mean_norm_dist\": 0.31611220547945207, \"diff\": -0.00010513687786894987}",
+          "metadata_language": "English",
+          "eval_diff_spoken_minus_written": -0.00010513687786894987
+        }
+      ]
+    },
+    {
+      "dataset": "outlier_tail_sentence_categorization",
+      "examples": [
+        {
+          "input": "{\"note\": \"no treebanks flagged as outliers (|z|<=2 for all)\"}",
+          "output": "{\"note\": \"no outlier sentences examined\"}",
+          "eval_max_norm_dist": 0.0
+        }
+      ]
+    }
+  ]
+}
