@@ -1,0 +1,67 @@
+{
+  "metadata": {
+    "source": "universal-dependencies/universal_dependencies (HF, UD v2.18; alias commul/universal_dependencies) + Grambank v1.0.3 (Zenodo 10.5281/zenodo.7740139) joined as a per-language covariate",
+    "description": "Per-sentence dependency-distance data across 18 UD treebanks (matched spoken/written register pairs + typologically diverse written treebanks). Each example carries the sentence's raw + length-normali...",
+    "n_treebanks": 18,
+    "n_ud_examples": 33030,
+    "n_examples_with_grambank_typology": 27012
+  },
+  "datasets": [
+    {
+      "dataset": "ud_treebanks",
+      "examples": [
+        {
+          "input": "{\"treebank_id\": \"sl_sst\", \"text\": \"eee , iz tega časa so ohranjena še razna železna orodja , tudi pri nas , grobišča in tudi gradišča , tako imenovana , na hribih .\", \"tokens\": [\"eee\", \",\", \"iz\", \"teg...",
+          "output": "{\"dependency_distances\": [6, 1, 2, 1, 2, 1, 3, 2, 1, 4, 3, 2, 1, 4, 1, 6, 2, 1, 9, 1, 2, 1, 2, 1, 6, 20], \"normalized_distances\": [0.222222, 0.037037, 0.074074, 0.037037, 0.074074, 0.037037, 0.111111,...",
+          "metadata_treebank_id": "sl_sst",
+          "metadata_language": "Slovenian",
+          "metadata_iso639_3": "slv",
+          "metadata_language_family": "Indo-European",
+          "metadata_register": "spoken",
+          "metadata_sentence_id": "Gos001.s12",
+          "metadata_row_index": 0,
+          "metadata_sentence_length": 27,
+          "metadata_num_arcs": 26,
+          "metadata_mean_dependency_distance": 3.269231,
+          "metadata_mean_normalized_distance": 0.121083,
+          "metadata_head_finality_ratio": 0.615385,
+          "metadata_grambank_features": "{\"GB020\": \"0\", \"GB021\": \"0\", \"GB022\": \"0\", \"GB023\": \"0\", \"GB024\": \"1\", \"GB025\": \"1\", \"GB026\": \"0\", \"GB027\": \"1\", \"GB028\": \"0\", \"GB030\": \"1\", \"GB031\": \"1\", \"GB035\": \"1\", \"GB036\": \"0\", \"GB037\": \"0\", \"GB..."
+        },
+        {
+          "input": "{\"treebank_id\": \"sl_sst\", \"text\": \"bomo videli , če bo to potegnilo , ja .\", \"tokens\": [\"bomo\", \"videli\", \",\", \"če\", \"bo\", \"to\", \"potegnilo\", \",\", \"ja\", \".\"], \"upos\": [\"AUX\", \"VERB\", \"PUNCT\", \"SCONJ\",...",
+          "output": "{\"dependency_distances\": [1, 4, 3, 2, 1, 5, 1, 7, 8], \"normalized_distances\": [0.1, 0.4, 0.3, 0.2, 0.1, 0.5, 0.1, 0.7, 0.8], \"heads\": [2, 0, 7, 7, 7, 7, 2, 7, 2, 2], \"deprel\": [\"aux\", \"root\", \"punct\",...",
+          "metadata_treebank_id": "sl_sst",
+          "metadata_language": "Slovenian",
+          "metadata_iso639_3": "slv",
+          "metadata_language_family": "Indo-European",
+          "metadata_register": "spoken",
+          "metadata_sentence_id": "Gos001.s15",
+          "metadata_row_index": 2,
+          "metadata_sentence_length": 10,
+          "metadata_num_arcs": 9,
+          "metadata_mean_dependency_distance": 3.555556,
+          "metadata_mean_normalized_distance": 0.355556,
+          "metadata_head_finality_ratio": 0.555556,
+          "metadata_grambank_features": "{\"GB020\": \"0\", \"GB021\": \"0\", \"GB022\": \"0\", \"GB023\": \"0\", \"GB024\": \"1\", \"GB025\": \"1\", \"GB026\": \"0\", \"GB027\": \"1\", \"GB028\": \"0\", \"GB030\": \"1\", \"GB031\": \"1\", \"GB035\": \"1\", \"GB036\": \"0\", \"GB037\": \"0\", \"GB..."
+        },
+        {
+          "input": "{\"treebank_id\": \"sl_sst\", \"text\": \"tale druga vrsta , a ne , kaže na to , kako so , tale sedi in ta mu iz ene posode toči pijačo .\", \"tokens\": [\"tale\", \"druga\", \"vrsta\", \",\", \"a\", \"ne\", \",\", \"kaže\", \"...",
+          "output": "{\"dependency_distances\": [2, 1, 5, 1, 3, 1, 2, 1, 2, 5, 4, 3, 1, 1, 6, 6, 5, 4, 2, 1, 1, 7, 1, 17], \"normalized_distances\": [0.08, 0.04, 0.2, 0.04, 0.12, 0.04, 0.08, 0.04, 0.08, 0.2, 0.16, 0.12, 0.04,...",
+          "metadata_treebank_id": "sl_sst",
+          "metadata_language": "Slovenian",
+          "metadata_iso639_3": "slv",
+          "metadata_language_family": "Indo-European",
+          "metadata_register": "spoken",
+          "metadata_sentence_id": "Gos001.s19",
+          "metadata_row_index": 5,
+          "metadata_sentence_length": 25,
+          "metadata_num_arcs": 24,
+          "metadata_mean_dependency_distance": 3.416667,
+          "metadata_mean_normalized_distance": 0.136667,
+          "metadata_head_finality_ratio": 0.666667,
+          "metadata_grambank_features": "{\"GB020\": \"0\", \"GB021\": \"0\", \"GB022\": \"0\", \"GB023\": \"0\", \"GB024\": \"1\", \"GB025\": \"1\", \"GB026\": \"0\", \"GB027\": \"1\", \"GB028\": \"0\", \"GB030\": \"1\", \"GB031\": \"1\", \"GB035\": \"1\", \"GB036\": \"0\", \"GB037\": \"0\", \"GB..."
+        }
+      ]
+    }
+  ]
+}
