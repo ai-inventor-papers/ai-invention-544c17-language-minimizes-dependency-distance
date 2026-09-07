@@ -1,0 +1,139 @@
+{
+  "metadata": {
+    "evaluation_name": "Register Effects on Tail Shape, Corrected Unit",
+    "description": "Corrected decile-level paired tests, GPD xi vs power-law alpha tail models, and stratified/robustness analyses of the spoken-vs-written dependency-distance register effect across 4 matched UD treebank...",
+    "n_sentences": 33030,
+    "n_arcs": 558144,
+    "n_treebanks": 18
+  },
+  "metrics_agg": {
+    "slovenian_wilcoxon_p_raw": 0.009344113002204883,
+    "slovenian_wilcoxon_p_holm": 0.02803233900661465,
+    "slovenian_wilcoxon_effect_r": -0.8219394233058879,
+    "slovenian_paired_t_p": 0.05453573180056958,
+    "slovenian_mean_diff": 0.013298933569475887,
+    "french_wilcoxon_p_raw": 0.005062032126267864,
+    "french_wilcoxon_p_holm": 0.020248128505071458,
+    "french_wilcoxon_effect_r": -0.8864052604279182,
+    "french_paired_t_p": 0.0005203109044302908,
+    "french_mean_diff": 0.017038480367574334,
+    "english_wilcoxon_p_raw": 0.20262160771231197,
+    "english_wilcoxon_p_holm": 0.40524321542462394,
+    "english_wilcoxon_effect_r": -0.40291148201269017,
+    "english_paired_t_p": 0.25382988470930845,
+    "english_mean_diff": -0.007776469505448394,
+    "turkish_wilcoxon_p_raw": 0.44126813332892967,
+    "turkish_wilcoxon_p_holm": 0.44126813332892967,
+    "turkish_wilcoxon_effect_r": -0.2566845136956067,
+    "turkish_paired_t_p": 0.7263500489492822,
+    "turkish_mean_diff": -0.00117765387069601,
+    "slovenian_xi_spoken": 0.02585425825494243,
+    "slovenian_xi_written": 0.2491381096819045,
+    "slovenian_mdd_spoken": 0.2742011489354319,
+    "slovenian_mdd_written": 0.19583316014593888,
+    "french_xi_spoken": 0.04550991168478142,
+    "french_xi_written": 0.5022840032282636,
+    "french_mdd_spoken": 0.2443179589748712,
+    "french_mdd_written": 0.14897375196477966,
+    "english_xi_spoken": -0.3276841719469906,
+    "english_xi_written": 0.22547452396914766,
+    "english_mdd_spoken": 0.28751337468525684,
+    "english_mdd_written": 0.22933866372578385,
+    "turkish_xi_spoken": -0.04336316138243194,
+    "turkish_xi_written": -0.15733895730840997,
+    "turkish_mdd_spoken": 0.24432614305040343,
+    "turkish_mdd_written": 0.23725369545978225,
+    "n_pairs_spoken_lighter_tail": 3.0,
+    "n_pairs_spoken_heavier_tail": 1.0,
+    "n_pairs_spoken_higher_mdd": 4.0,
+    "xi_alpha_correlation_r": -0.7552906602026527,
+    "xi_alpha_correlation_p": 0.0002899069209823921,
+    "xi_paired_ttest_t": -1.8854153190602811,
+    "xi_paired_ttest_p": 0.15585861043753843,
+    "size_vs_effect_magnitude_r": 0.9331475068838943,
+    "n_treebanks_gpd_wins": 6.0,
+    "n_treebanks_with_model_comparison": 18.0,
+    "slovenian_length_ks_stat": 0.285490658853811,
+    "slovenian_length_ks_p": 4.0346599489687065e-72,
+    "french_length_ks_stat": 0.4110496894409938,
+    "french_length_ks_p": 4.648692568941583e-119,
+    "english_length_ks_stat": 0.37063586035654417,
+    "english_length_ks_p": 1.1215091228016796e-115,
+    "turkish_length_ks_stat": 0.22350000000000003,
+    "turkish_length_ks_p": 3.59372037190255e-44,
+    "n_pairs_flagged_annotation_reliability": 1.0,
+    "n_pairs_direction_changed_excl_flat_list": 4.0,
+    "n_treebanks_below_1000_arcs": 1.0
+  },
+  "datasets": [
+    {
+      "dataset": "matched_register_pairs",
+      "examples": [
+        {
+          "input": "Matched register pair: slovenian (sl_sst spoken vs sl_ssj written), family=Indo-European (Slavic)",
+          "output": "{\"decile_paired_test\": {\"status\": \"ok\", \"n_deciles\": 10, \"spoken_treebank\": \"sl_sst\", \"written_treebank\": \"sl_ssj\", \"wilcoxon_Z\": -2.5992006763318902, \"wilcoxon_p_raw\": 0.009344113002204883, \"wilcoxon...",
+          "metadata_pair_name": "slovenian",
+          "metadata_family": "Indo-European (Slavic)",
+          "eval_wilcoxon_p_raw": 0.009344113002204883,
+          "eval_wilcoxon_effect_r": -0.8219394233058879
+        },
+        {
+          "input": "Matched register pair: french (fr_rhapsodie spoken vs fr_gsd written), family=Indo-European (Romance)",
+          "output": "{\"decile_paired_test\": {\"status\": \"ok\", \"n_deciles\": 10, \"spoken_treebank\": \"fr_rhapsodie\", \"written_treebank\": \"fr_gsd\", \"wilcoxon_Z\": -2.8030595529069404, \"wilcoxon_p_raw\": 0.005062032126267864, \"wi...",
+          "metadata_pair_name": "french",
+          "metadata_family": "Indo-European (Romance)",
+          "eval_wilcoxon_p_raw": 0.005062032126267864,
+          "eval_wilcoxon_effect_r": -0.8864052604279182
+        },
+        {
+          "input": "Matched register pair: english (en_eslspok spoken vs en_ewt written), family=Indo-European (Germanic)",
+          "output": "{\"decile_paired_test\": {\"status\": \"ok\", \"n_deciles\": 10, \"spoken_treebank\": \"en_eslspok\", \"written_treebank\": \"en_ewt\", \"wilcoxon_Z\": -1.274117978594064, \"wilcoxon_p_raw\": 0.20262160771231197, \"wilcox...",
+          "metadata_pair_name": "english",
+          "metadata_family": "Indo-European (Germanic)",
+          "eval_wilcoxon_p_raw": 0.20262160771231197,
+          "eval_wilcoxon_effect_r": -0.40291148201269017
+        }
+      ]
+    },
+    {
+      "dataset": "treebank_tail_models",
+      "examples": [
+        {
+          "input": "Tail-shape model comparison for treebank ar_padt",
+          "output": "{\"mrl_chosen_quantile\": 0.5, \"gpd\": {\"status\": \"ok\", \"threshold_quantile\": 0.5, \"threshold\": 0.03125, \"n_exceed\": 35603, \"xi\": 0.8153866916921376, \"sigma\": 0.04763790209052377, \"loglik\": 43747.6617300...",
+          "metadata_treebank_id": "ar_padt",
+          "eval_xi": 0.8153866916921376,
+          "eval_alpha": 1.9080153334583176,
+          "eval_n_normalized_distances": 72207.0
+        },
+        {
+          "input": "Tail-shape model comparison for treebank en_eslspok",
+          "output": "{\"mrl_chosen_quantile\": 0.5, \"gpd\": {\"status\": \"ok\", \"threshold_quantile\": 0.5, \"threshold\": 0.166667, \"n_exceed\": 7458, \"xi\": -0.3276841719469906, \"sigma\": 0.2898847326471226, \"loglik\": 4221.06282365...",
+          "metadata_treebank_id": "en_eslspok",
+          "eval_xi": -0.3276841719469906,
+          "eval_alpha": 2.49020301465924,
+          "eval_n_normalized_distances": 15023.0
+        },
+        {
+          "input": "Tail-shape model comparison for treebank en_ewt",
+          "output": "{\"mrl_chosen_quantile\": 0.5, \"gpd\": {\"status\": \"ok\", \"threshold_quantile\": 0.5, \"threshold\": 0.090909, \"n_exceed\": 14688, \"xi\": 0.22547452396914766, \"sigma\": 0.14993183086044923, \"loglik\": 9871.865046...",
+          "metadata_treebank_id": "en_ewt",
+          "eval_xi": 0.22547452396914766,
+          "eval_alpha": 2.1586814667862066,
+          "eval_n_normalized_distances": 30228.0
+        }
+      ]
+    },
+    {
+      "dataset": "qualitative_longest_arc_inspection",
+      "examples": [
+        {
+          "input": "Qualitative inspection of the 20 longest-distance arcs (>p95) per register, English ESLSpok vs EWT",
+          "output": "{\"spoken\": {\"p95_threshold\": 0.666667, \"n_sampled\": 20, \"category_counts\": {\"other\": 11, \"topicalization/scrambling\": 4, \"coordination/apposition\": 3, \"extraposition\": 2}, \"examples\": [{\"sent_id\": 857...",
+          "metadata_pair_name": "english",
+          "eval_n_categories_spoken": 4.0
+        }
+      ]
+    }
+  ]
+}

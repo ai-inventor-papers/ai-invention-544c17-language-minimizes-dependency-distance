@@ -1,0 +1,267 @@
+{
+  "metadata": {
+    "evaluation_name": "Register Effects on Tail Shape, Corrected Unit",
+    "description": "Corrected decile-level paired tests, GPD xi vs power-law alpha tail models, and stratified/robustness analyses of the spoken-vs-written dependency-distance register effect across 4 matched UD treebank pairs and 18 treebanks total.",
+    "n_sentences": 33030,
+    "n_arcs": 558144,
+    "n_treebanks": 18
+  },
+  "metrics_agg": {
+    "slovenian_wilcoxon_p_raw": 0.009344113002204883,
+    "slovenian_wilcoxon_p_holm": 0.02803233900661465,
+    "slovenian_wilcoxon_effect_r": -0.8219394233058879,
+    "slovenian_paired_t_p": 0.05453573180056958,
+    "slovenian_mean_diff": 0.013298933569475887,
+    "french_wilcoxon_p_raw": 0.005062032126267864,
+    "french_wilcoxon_p_holm": 0.020248128505071458,
+    "french_wilcoxon_effect_r": -0.8864052604279182,
+    "french_paired_t_p": 0.0005203109044302908,
+    "french_mean_diff": 0.017038480367574334,
+    "english_wilcoxon_p_raw": 0.20262160771231197,
+    "english_wilcoxon_p_holm": 0.40524321542462394,
+    "english_wilcoxon_effect_r": -0.40291148201269017,
+    "english_paired_t_p": 0.25382988470930845,
+    "english_mean_diff": -0.007776469505448394,
+    "turkish_wilcoxon_p_raw": 0.44126813332892967,
+    "turkish_wilcoxon_p_holm": 0.44126813332892967,
+    "turkish_wilcoxon_effect_r": -0.2566845136956067,
+    "turkish_paired_t_p": 0.7263500489492822,
+    "turkish_mean_diff": -0.00117765387069601,
+    "slovenian_xi_spoken": 0.02585425825494243,
+    "slovenian_xi_written": 0.2491381096819045,
+    "slovenian_mdd_spoken": 0.2742011489354319,
+    "slovenian_mdd_written": 0.19583316014593888,
+    "french_xi_spoken": 0.04550991168478142,
+    "french_xi_written": 0.5022840032282636,
+    "french_mdd_spoken": 0.2443179589748712,
+    "french_mdd_written": 0.14897375196477966,
+    "english_xi_spoken": -0.3276841719469906,
+    "english_xi_written": 0.22547452396914766,
+    "english_mdd_spoken": 0.28751337468525684,
+    "english_mdd_written": 0.22933866372578385,
+    "turkish_xi_spoken": -0.04336316138243194,
+    "turkish_xi_written": -0.15733895730840997,
+    "turkish_mdd_spoken": 0.24432614305040343,
+    "turkish_mdd_written": 0.23725369545978225,
+    "n_pairs_spoken_lighter_tail": 3.0,
+    "n_pairs_spoken_heavier_tail": 1.0,
+    "n_pairs_spoken_higher_mdd": 4.0,
+    "xi_alpha_correlation_r": -0.7552906602026527,
+    "xi_alpha_correlation_p": 0.0002899069209823921,
+    "xi_paired_ttest_t": -1.8854153190602811,
+    "xi_paired_ttest_p": 0.15585861043753843,
+    "size_vs_effect_magnitude_r": 0.9331475068838943,
+    "n_treebanks_gpd_wins": 6.0,
+    "n_treebanks_with_model_comparison": 18.0,
+    "slovenian_length_ks_stat": 0.285490658853811,
+    "slovenian_length_ks_p": 4.0346599489687065e-72,
+    "french_length_ks_stat": 0.4110496894409938,
+    "french_length_ks_p": 4.648692568941583e-119,
+    "english_length_ks_stat": 0.37063586035654417,
+    "english_length_ks_p": 1.1215091228016796e-115,
+    "turkish_length_ks_stat": 0.22350000000000003,
+    "turkish_length_ks_p": 3.59372037190255e-44,
+    "n_pairs_flagged_annotation_reliability": 1.0,
+    "n_pairs_direction_changed_excl_flat_list": 4.0,
+    "n_treebanks_below_1000_arcs": 1.0
+  },
+  "datasets": [
+    {
+      "dataset": "matched_register_pairs",
+      "examples": [
+        {
+          "input": "Matched register pair: slovenian (sl_sst spoken vs sl_ssj written), family=Indo-European (Slavic)",
+          "output": "{\"decile_paired_test\": {\"status\": \"ok\", \"n_deciles\": 10, \"spoken_treebank\": \"sl_sst\", \"written_treebank\": \"sl_ssj\", \"wilcoxon_Z\": -2.5992006763318902, \"wilcoxon_p_raw\": 0.009344113002204883, \"wilcoxon_effect_r\": -0.8219394233058879, \"paired_t_stat\": 2.208982043602168, \"paired_t_p\": 0.05453573180056958, \"mean_diff_spoken_minus_written\": 0.013298933569475887, \"diff_95ci_lo\": -0.0003201349598043277, \"diff_95ci_hi\": 0.026918002098756104, \"direction\": \"spoken>written (heavier)\", \"decile_means_spoken\": [0.45576128120713305, 0.33351653406593407, 0.29374021444235593, 0.25649399772528436, 0.22709801000723415, 0.19722396384736066, 0.1780318663444867, 0.15799313437941864, 0.1306631781112012, 0.09138123099217771], \"decile_means_written\": [0.3905471293532338, 0.3315789957894737, 0.28072497616158115, 0.24514502748876044, 0.2123766171086775, 0.18906797804730296, 0.16839051018828582, 0.14974106592452624, 0.1263557844726059, 0.09498599089338006], \"wilcoxon_p_holm\": 0.02803233900661465}, \"language_level_tally\": {\"family\": \"Indo-European (Slavic)\", \"xi_spoken\": 0.02585425825494243, \"xi_written\": 0.2491381096819045, \"xi_direction\": \"spoken<written (lighter tail)\", \"mdd_spoken\": 0.2742011489354319, \"mdd_written\": 0.19583316014593888, \"mdd_direction\": \"spoken>written\"}, \"sentence_length_ks\": {\"ks_stat\": 0.285490658853811, \"ks_p\": 4.0346599489687065e-72, \"spoken_mean_len\": 15.225741578682754, \"written_mean_len\": 19.402201100550275, \"spoken_shorter\": true}, \"stratified_by_deprel\": {\"nsubj\": {\"n_spoken\": 1203, \"n_written\": 1932, \"mean_spoken\": 0.18551984538653365, \"mean_written\": 0.19978548084886127, \"mannwhitney_p\": 0.005379515521257324}, \"obj\": {\"n_spoken\": 1077, \"n_written\": 1692, \"mean_spoken\": 0.1968479340761374, \"mean_written\": 0.19135230614657212, \"mannwhitney_p\": 0.508193331991684}, \"iobj\": {\"n_spoken\": 123, \"n_written\": 264, \"mean_spoken\": 0.16031286991869917, \"mean_written\": 0.18526148484848484, \"mannwhitney_p\": 0.030772966305240172}, \"obl\": {\"n_spoken\": 1250, \"n_written\": 2551, \"mean_spoken\": 0.2126866672, \"mean_written\": 0.22166977263818108, \"mannwhitney_p\": 0.002126108820471855}, \"nmod\": {\"n_spoken\": 680, \"n_written\": 2784, \"mean_spoken\": 0.20414727205882352, \"mean_written\": 0.18748171803160918, \"mannwhitney_p\": 0.49092179083569776}, \"amod\": {\"n_spoken\": 999, \"n_written\": 3144, \"mean_spoken\": 0.1355982822822823, \"mean_written\": 0.1252730413486005, \"mannwhitney_p\": 0.37591311030207797}, \"advmod\": {\"n_spoken\": 3310, \"n_written\": 2881, \"mean_spoken\": 0.16703067432024168, \"mean_written\": 0.1574890451232211, \"mannwhitney_p\": 0.18541948781221063}, \"acl\": {\"n_spoken\": 324, \"n_written\": 627, \"mean_spoken\": 0.1318059722222222, \"mean_written\": 0.12642079585326954, \"mannwhitney_p\": 0.0031945237383758486}, \"advcl\": {\"n_spoken\": 302, \"n_written\": 358, \"mean_spoken\": 0.173391440397351, \"mean_written\": 0.21979462011173184, \"mannwhitney_p\": 0.00015003557306791292}, \"conj\": {\"n_spoken\": 859, \"n_written\": 1604, \"mean_spoken\": 0.19205177415599534, \"mean_written\": 0.1955849794264339, \"mannwhitney_p\": 0.00013517149083707472}, \"case\": {\"n_spoken\": 1659, \"n_written\": 3565, \"mean_spoken\": 0.11051774382157926, \"mean_written\": 0.09547625525946703, \"mannwhitney_p\": 0.7155297180229148}, \"mark\": {\"n_spoken\": 952, \"n_written\": 1192, \"mean_spoken\": 0.12814598214285713, \"mean_written\": 0.12084394043624161, \"mannwhitney_p\": 0.006361542331421864}, \"det\": {\"n_spoken\": 742, \"n_written\": 850, \"mean_spoken\": 0.10739593261455525, \"mean_written\": 0.10315589647058823, \"mannwhitney_p\": 0.23801009131980833}}, \"annotation_reliability\": {\"spoken_mean_length\": 15.225741578682754, \"written_mean_length\": 19.402201100550275, \"spoken_intj_fraction\": 0.3051784816490699, \"written_intj_fraction\": 0.003501750875437719, \"contradicts_shorter_spoken_heuristic\": false, \"contradicts_more_disfluency_spoken_heuristic\": false, \"flagged\": false}, \"robustness_exclude_flat_list\": {\"spoken\": {\"xi_excl_flat_list\": -0.6079501218747294, \"n\": 28234}, \"written\": {\"xi_excl_flat_list\": -0.6903500440333858, \"n\": 36637}, \"direction_changed_vs_full\": true}}",
+          "metadata_pair_name": "slovenian",
+          "metadata_family": "Indo-European (Slavic)",
+          "eval_wilcoxon_p_raw": 0.009344113002204883,
+          "eval_wilcoxon_effect_r": -0.8219394233058879
+        },
+        {
+          "input": "Matched register pair: french (fr_rhapsodie spoken vs fr_gsd written), family=Indo-European (Romance)",
+          "output": "{\"decile_paired_test\": {\"status\": \"ok\", \"n_deciles\": 10, \"spoken_treebank\": \"fr_rhapsodie\", \"written_treebank\": \"fr_gsd\", \"wilcoxon_Z\": -2.8030595529069404, \"wilcoxon_p_raw\": 0.005062032126267864, \"wilcoxon_effect_r\": -0.8864052604279182, \"paired_t_stat\": 5.2606121372702175, \"paired_t_p\": 0.0005203109044302908, \"mean_diff_spoken_minus_written\": 0.017038480367574334, \"diff_95ci_lo\": 0.009711629537110794, \"diff_95ci_hi\": 0.024365331198037875, \"direction\": \"spoken>written (heavier)\", \"decile_means_spoken\": [0.3776289617063492, 0.27585938391446624, 0.23807839417430113, 0.20162675885466239, 0.18199592813958917, 0.16749607497306865, 0.14225756328009465, 0.13036905613829905, 0.11612298222203003, 0.08985858228598852], \"decile_means_written\": [0.33425932407407405, 0.2700215535714286, 0.2198587442435404, 0.18348586684368262, 0.16587953037392641, 0.14731766928145723, 0.13216854758767801, 0.11697326738747141, 0.1014132216472594, 0.07953115700258756], \"wilcoxon_p_holm\": 0.020248128505071458}, \"language_level_tally\": {\"family\": \"Indo-European (Romance)\", \"xi_spoken\": 0.04550991168478142, \"xi_written\": 0.5022840032282636, \"xi_direction\": \"spoken<written (lighter tail)\", \"mdd_spoken\": 0.2443179589748712, \"mdd_written\": 0.14897375196477966, \"mdd_direction\": \"spoken>written\"}, \"sentence_length_ks\": {\"ks_stat\": 0.4110496894409938, \"ks_p\": 4.648692568941583e-119, \"spoken_mean_len\": 14.85947204968944, \"written_mean_len\": 24.473, \"spoken_shorter\": true}, \"stratified_by_deprel\": {\"nsubj\": {\"n_spoken\": 1433, \"n_written\": 2288, \"mean_spoken\": 0.15209181646894626, \"mean_written\": 0.16873177622377622, \"mannwhitney_p\": 0.3594256373885698}, \"obj\": {\"n_spoken\": 659, \"n_written\": 1536, \"mean_spoken\": 0.18111041274658574, \"mean_written\": 0.1150632578125, \"mannwhitney_p\": 3.362256453956007e-19}, \"iobj\": {\"n_spoken\": 66, \"n_written\": 95, \"mean_spoken\": 0.15552236363636363, \"mean_written\": 0.1443068526315789, \"mannwhitney_p\": 0.12436768699244796}, \"nmod\": {\"n_spoken\": 601, \"n_written\": 4285, \"mean_spoken\": 0.24246659400998335, \"mean_written\": 0.1556656429404901, \"mannwhitney_p\": 7.059597080097892e-14}, \"amod\": {\"n_spoken\": 431, \"n_written\": 2367, \"mean_spoken\": 0.17416504176334108, \"mean_written\": 0.15468762230671734, \"mannwhitney_p\": 0.021883358162311187}, \"advmod\": {\"n_spoken\": 1032, \"n_written\": 1760, \"mean_spoken\": 0.1985047218992248, \"mean_written\": 0.1312698278409091, \"mannwhitney_p\": 8.255333584723072e-29}, \"acl\": {\"n_spoken\": 62, \"n_written\": 607, \"mean_spoken\": 0.1824708064516129, \"mean_written\": 0.09772070510708403, \"mannwhitney_p\": 0.007262462537596202}, \"advcl\": {\"n_spoken\": 146, \"n_written\": 406, \"mean_spoken\": 0.21429785616438354, \"mean_written\": 0.17378090886699507, \"mannwhitney_p\": 0.001556601345934955}, \"conj\": {\"n_spoken\": 385, \"n_written\": 1758, \"mean_spoken\": 0.2002360077922078, \"mean_written\": 0.1352142980659841, \"mannwhitney_p\": 0.23147774474475347}, \"case\": {\"n_spoken\": 1526, \"n_written\": 7057, \"mean_spoken\": 0.10369254325032766, \"mean_written\": 0.0708871207311889, \"mannwhitney_p\": 9.444344482962179e-29}, \"mark\": {\"n_spoken\": 411, \"n_written\": 808, \"mean_spoken\": 0.14030748175182484, \"mean_written\": 0.10557393935643564, \"mannwhitney_p\": 0.002446639405360496}, \"det\": {\"n_spoken\": 1803, \"n_written\": 7376, \"mean_spoken\": 0.154021921797005, \"mean_written\": 0.1144237346800434, \"mannwhitney_p\": 2.508051720793905e-23}}, \"annotation_reliability\": {\"spoken_mean_length\": 14.85947204968944, \"written_mean_length\": 24.473, \"spoken_intj_fraction\": 0.4355590062111801, \"written_intj_fraction\": 0.0035, \"contradicts_shorter_spoken_heuristic\": false, \"contradicts_more_disfluency_spoken_heuristic\": false, \"flagged\": false}, \"robustness_exclude_flat_list\": {\"spoken\": {\"xi_excl_flat_list\": -0.5722090342416006, \"n\": 17830}, \"written\": {\"xi_excl_flat_list\": -0.6324330607302096, \"n\": 46944}, \"direction_changed_vs_full\": true}}",
+          "metadata_pair_name": "french",
+          "metadata_family": "Indo-European (Romance)",
+          "eval_wilcoxon_p_raw": 0.005062032126267864,
+          "eval_wilcoxon_effect_r": -0.8864052604279182
+        },
+        {
+          "input": "Matched register pair: english (en_eslspok spoken vs en_ewt written), family=Indo-European (Germanic)",
+          "output": "{\"decile_paired_test\": {\"status\": \"ok\", \"n_deciles\": 10, \"spoken_treebank\": \"en_eslspok\", \"written_treebank\": \"en_ewt\", \"wilcoxon_Z\": -1.274117978594064, \"wilcoxon_p_raw\": 0.20262160771231197, \"wilcoxon_effect_r\": -0.40291148201269017, \"paired_t_stat\": -1.2189979608876305, \"paired_t_p\": 0.25382988470930845, \"mean_diff_spoken_minus_written\": -0.007776469505448394, \"diff_95ci_lo\": -0.022207663615258333, \"diff_95ci_hi\": 0.006654724604361544, \"direction\": \"spoken<written (lighter)\", \"decile_means_spoken\": [0.3779845978987583, 0.34086757990867583, 0.3160070079155673, 0.2879008746355685, 0.26317314398350317, 0.2328316727272727, 0.20892361493777306, 0.1848206082107843, 0.15163916012710518, 0.11975124324747648], \"decile_means_written\": [0.4398966828908555, 0.35294117647058826, 0.31611215593607306, 0.2951839826839827, 0.26848952447916663, 0.2401407529449424, 0.20992726444988946, 0.1786272850440176, 0.15128655144383588, 0.10905882230361734], \"wilcoxon_p_holm\": 0.40524321542462394}, \"language_level_tally\": {\"family\": \"Indo-European (Germanic)\", \"xi_spoken\": -0.3276841719469906, \"xi_written\": 0.22547452396914766, \"xi_direction\": \"spoken<written (lighter tail)\", \"mdd_spoken\": 0.28751337468525684, \"mdd_written\": 0.22933866372578385, \"mdd_direction\": \"spoken>written\"}, \"sentence_length_ks\": {\"ks_stat\": 0.37063586035654417, \"ks_p\": 1.1215091228016796e-115, \"spoken_mean_len\": 9.094288793103448, \"written_mean_len\": 16.80135912179822, \"spoken_shorter\": true}, \"stratified_by_deprel\": {\"nsubj\": {\"n_spoken\": 1922, \"n_written\": 2487, \"mean_spoken\": 0.22515616441207073, \"mean_written\": 0.15834632569360674, \"mannwhitney_p\": 1.0451473366877527e-68}, \"obj\": {\"n_spoken\": 891, \"n_written\": 1536, \"mean_spoken\": 0.3160337744107744, \"mean_written\": 0.18839302408854167, \"mannwhitney_p\": 6.647952157094933e-62}, \"iobj\": {\"n_spoken\": 18, \"n_written\": 95, \"mean_spoken\": 0.15490777777777776, \"mean_written\": 0.10029407368421052, \"mannwhitney_p\": 0.011760790892717216}, \"obl\": {\"n_spoken\": 678, \"n_written\": 1336, \"mean_spoken\": 0.3745960398230088, \"mean_written\": 0.27981920284431133, \"mannwhitney_p\": 2.895615361395067e-22}, \"nmod\": {\"n_spoken\": 205, \"n_written\": 1087, \"mean_spoken\": 0.3807246195121951, \"mean_written\": 0.2405256080956762, \"mannwhitney_p\": 6.885428566750858e-16}, \"amod\": {\"n_spoken\": 465, \"n_written\": 1445, \"mean_spoken\": 0.22819019569892474, \"mean_written\": 0.15605839238754327, \"mannwhitney_p\": 2.0823038474543522e-27}, \"advmod\": {\"n_spoken\": 1290, \"n_written\": 1813, \"mean_spoken\": 0.29044868139534885, \"mean_written\": 0.19769479040264756, \"mannwhitney_p\": 1.621392444869928e-63}, \"acl\": {\"n_spoken\": 51, \"n_written\": 221, \"mean_spoken\": 0.13278084313725494, \"mean_written\": 0.10449889140271491, \"mannwhitney_p\": 0.0005431267017041371}, \"advcl\": {\"n_spoken\": 139, \"n_written\": 591, \"mean_spoken\": 0.25851723741007193, \"mean_written\": 0.18034848223350256, \"mannwhitney_p\": 3.331353379693058e-09}, \"conj\": {\"n_spoken\": 413, \"n_written\": 1218, \"mean_spoken\": 0.2777382953995157, \"mean_written\": 0.18355859441707717, \"mannwhitney_p\": 5.112450053935236e-11}, \"compound\": {\"n_spoken\": 258, \"n_written\": 1102, \"mean_spoken\": 0.25108179844961237, \"mean_written\": 0.1595865607985481, \"mannwhitney_p\": 2.6927230718129755e-26}, \"case\": {\"n_spoken\": 1041, \"n_written\": 2727, \"mean_spoken\": 0.16798637944284345, \"mean_written\": 0.10656601026769343, \"mannwhitney_p\": 5.093560145383795e-69}, \"mark\": {\"n_spoken\": 492, \"n_written\": 1116, \"mean_spoken\": 0.19018540853658536, \"mean_written\": 0.11931401792114696, \"mannwhitney_p\": 1.0446577544383396e-38}, \"det\": {\"n_spoken\": 961, \"n_written\": 2533, \"mean_spoken\": 0.18033088969823102, \"mean_written\": 0.11814631464666406, \"mannwhitney_p\": 1.956622605797001e-65}}, \"annotation_reliability\": {\"spoken_mean_length\": 9.094288793103448, \"written_mean_length\": 16.80135912179822, \"spoken_intj_fraction\": 0.07758620689655173, \"written_intj_fraction\": 0.060637741766858336, \"contradicts_shorter_spoken_heuristic\": false, \"contradicts_more_disfluency_spoken_heuristic\": false, \"flagged\": false}, \"robustness_exclude_flat_list\": {\"spoken\": {\"xi_excl_flat_list\": -0.47277624689208325, \"n\": 14996}, \"written\": {\"xi_excl_flat_list\": -0.7533353335950276, \"n\": 29862}, \"direction_changed_vs_full\": true}}",
+          "metadata_pair_name": "english",
+          "metadata_family": "Indo-European (Germanic)",
+          "eval_wilcoxon_p_raw": 0.20262160771231197,
+          "eval_wilcoxon_effect_r": -0.40291148201269017
+        },
+        {
+          "input": "Matched register pair: turkish (tr_atis spoken vs tr_imst written), family=Turkic",
+          "output": "{\"decile_paired_test\": {\"status\": \"ok\", \"n_deciles\": 9, \"spoken_treebank\": \"tr_atis\", \"written_treebank\": \"tr_imst\", \"wilcoxon_Z\": -0.77005354108682, \"wilcoxon_p_raw\": 0.44126813332892967, \"wilcoxon_effect_r\": -0.2566845136956067, \"paired_t_stat\": -0.3625253415289011, \"paired_t_p\": 0.7263500489492822, \"mean_diff_spoken_minus_written\": -0.00117765387069601, \"diff_95ci_lo\": -0.008668646594711393, \"diff_95ci_hi\": 0.006313338853319374, \"direction\": \"spoken<written (lighter)\", \"decile_means_spoken\": [0.38049089405684755, 0.27253248786407763, 0.2584054691160809, 0.24180029154518948, 0.23046691583665338, 0.2096782763076923, 0.18894583295454545, 0.16835937660714287, 0.14096697571330688], \"decile_means_written\": [0.36101388344988344, 0.28678323494623653, 0.2611065409683427, 0.23428571428571426, 0.23008170155038762, 0.21413612567645365, 0.1925513333828481, 0.17696767539058164, 0.14531919518735262], \"wilcoxon_p_holm\": 0.44126813332892967}, \"language_level_tally\": {\"family\": \"Turkic\", \"xi_spoken\": -0.04336316138243194, \"xi_written\": -0.15733895730840997, \"xi_direction\": \"spoken>written (heavier tail)\", \"mdd_spoken\": 0.24432614305040343, \"mdd_written\": 0.23725369545978225, \"mdd_direction\": \"spoken>written\"}, \"sentence_length_ks\": {\"ks_stat\": 0.22350000000000003, \"ks_p\": 3.59372037190255e-44, \"spoken_mean_len\": 8.3815, \"written_mean_len\": 11.045, \"spoken_shorter\": true}, \"stratified_by_deprel\": {\"nsubj\": {\"n_spoken\": 659, \"n_written\": 1749, \"mean_spoken\": 0.23301577845220026, \"mean_written\": 0.3219841092052601, \"mannwhitney_p\": 1.7698057699164597e-15}, \"obj\": {\"n_spoken\": 989, \"n_written\": 1441, \"mean_spoken\": 0.14075058645096056, \"mean_written\": 0.1792000964607911, \"mannwhitney_p\": 0.0005082040696028885}, \"obl\": {\"n_spoken\": 1591, \"n_written\": 1361, \"mean_spoken\": 0.3846933199245757, \"mean_written\": 0.2400726091109478, \"mannwhitney_p\": 2.3825919497681333e-52}, \"nmod\": {\"n_spoken\": 4329, \"n_written\": 825, \"mean_spoken\": 0.24064858188958188, \"mean_written\": 0.19133257939393938, \"mannwhitney_p\": 1.4012668186796762e-37}, \"amod\": {\"n_spoken\": 1080, \"n_written\": 1313, \"mean_spoken\": 0.20044275462962965, \"mean_written\": 0.14679551408987052, \"mannwhitney_p\": 1.0031790756644043e-56}, \"advmod\": {\"n_spoken\": 330, \"n_written\": 858, \"mean_spoken\": 0.1581588, \"mean_written\": 0.22099034265734266, \"mannwhitney_p\": 0.03955323940348499}, \"acl\": {\"n_spoken\": 764, \"n_written\": 605, \"mean_spoken\": 0.2243788219895288, \"mean_written\": 0.12404687107438016, \"mannwhitney_p\": 4.59497086309346e-78}, \"advcl\": {\"n_spoken\": 59, \"n_written\": 435, \"mean_spoken\": 0.2787556440677966, \"mean_written\": 0.3015365333333333, \"mannwhitney_p\": 0.9244866610433801}, \"conj\": {\"n_spoken\": 326, \"n_written\": 1108, \"mean_spoken\": 0.2583661963190184, \"mean_written\": 0.17714196389891698, \"mannwhitney_p\": 8.528602799046237e-39}, \"compound\": {\"n_spoken\": 550, \"n_written\": 756, \"mean_spoken\": 0.11018423636363636, \"mean_written\": 0.15326644312169313, \"mannwhitney_p\": 0.43737773459311824}, \"case\": {\"n_spoken\": 365, \"n_written\": 855, \"mean_spoken\": 0.1148265095890411, \"mean_written\": 0.13041379298245614, \"mannwhitney_p\": 3.4060771011385836e-08}, \"det\": {\"n_spoken\": 469, \"n_written\": 735, \"mean_spoken\": 0.13874753304904053, \"mean_written\": 0.1121752462585034, \"mannwhitney_p\": 3.002101952910242e-28}}, \"annotation_reliability\": {\"spoken_mean_length\": 8.3815, \"written_mean_length\": 11.045, \"spoken_intj_fraction\": 0.001, \"written_intj_fraction\": 0.0175, \"contradicts_shorter_spoken_heuristic\": false, \"contradicts_more_disfluency_spoken_heuristic\": true, \"flagged\": true}, \"robustness_exclude_flat_list\": {\"spoken\": {\"xi_excl_flat_list\": -0.9146392236541889, \"n\": 13568}, \"written\": {\"xi_excl_flat_list\": -0.6284166411760179, \"n\": 19706}, \"direction_changed_vs_full\": true}}",
+          "metadata_pair_name": "turkish",
+          "metadata_family": "Turkic",
+          "eval_wilcoxon_p_raw": 0.44126813332892967,
+          "eval_wilcoxon_effect_r": -0.2566845136956067
+        }
+      ]
+    },
+    {
+      "dataset": "treebank_tail_models",
+      "examples": [
+        {
+          "input": "Tail-shape model comparison for treebank ar_padt",
+          "output": "{\"mrl_chosen_quantile\": 0.5, \"gpd\": {\"status\": \"ok\", \"threshold_quantile\": 0.5, \"threshold\": 0.03125, \"n_exceed\": 35603, \"xi\": 0.8153866916921376, \"sigma\": 0.04763790209052377, \"loglik\": 43747.66173006185, \"aic\": -87491.3234601237, \"xi_ci95_lo\": 0.801887382189905, \"xi_ci95_hi\": 0.8319335739120678}, \"powerlaw\": {\"status\": \"ok\", \"xmin_quantile\": 0.5, \"xmin\": 0.03125, \"n_tail\": 36503, \"alpha\": 1.9080153334583176, \"loglik\": 46283.573711269826, \"aic\": -92565.14742253965, \"ks_stat\": 0.0431256759844173}, \"akaike\": {\"w_gpd\": 0.0, \"w_powerlaw\": 1.0, \"winner\": \"power-law\"}, \"threshold_sensitivity\": {\"minus20pct\": {\"status\": \"ok\", \"threshold_quantile\": 0.5, \"threshold\": 0.03125, \"n_exceed\": 35603, \"xi\": 0.8153866916921376, \"sigma\": 0.04763790209052377, \"loglik\": 43747.66173006185, \"aic\": -87491.3234601237, \"xi_ci95_lo\": 0.8015104057611616, \"xi_ci95_hi\": 0.8298005684422715}, \"plus20pct\": {\"status\": \"ok\", \"threshold_quantile\": 0.6, \"threshold\": 0.041667, \"n_exceed\": 28297, \"xi\": 0.7413798864998303, \"sigma\": 0.06365993929263958, \"loglik\": 28660.097647972678, \"aic\": -57316.195295945356, \"xi_ci95_lo\": 0.7221997610472796, \"xi_ci95_hi\": 0.7566672179183428}}, \"n_normalized_distances\": 72207}",
+          "metadata_treebank_id": "ar_padt",
+          "eval_xi": 0.8153866916921376,
+          "eval_alpha": 1.9080153334583176,
+          "eval_n_normalized_distances": 72207.0
+        },
+        {
+          "input": "Tail-shape model comparison for treebank en_eslspok",
+          "output": "{\"mrl_chosen_quantile\": 0.5, \"gpd\": {\"status\": \"ok\", \"threshold_quantile\": 0.5, \"threshold\": 0.166667, \"n_exceed\": 7458, \"xi\": -0.3276841719469906, \"sigma\": 0.2898847326471226, \"loglik\": 4221.062823656899, \"aic\": -8438.125647313798, \"xi_ci95_lo\": -0.3472383543069651, \"xi_ci95_hi\": -0.3065491753243921}, \"powerlaw\": {\"status\": \"ok\", \"xmin_quantile\": 0.5, \"xmin\": 0.166667, \"n_tail\": 8123, \"alpha\": 2.49020301465924, \"loglik\": 4220.8758855632805, \"aic\": -8439.751771126561, \"ks_stat\": 0.14249711361801987}, \"akaike\": {\"w_gpd\": 0.3072384060910001, \"w_powerlaw\": 0.6927615939089999, \"winner\": \"power-law\"}, \"threshold_sensitivity\": {\"minus20pct\": {\"status\": \"ok\", \"threshold_quantile\": 0.5, \"threshold\": 0.166667, \"n_exceed\": 7458, \"xi\": -0.3276841719469906, \"sigma\": 0.2898847326471226, \"loglik\": 4221.062823656899, \"aic\": -8438.125647313798, \"xi_ci95_lo\": -0.34960557220001254, \"xi_ci95_hi\": -0.308005248654954}, \"plus20pct\": {\"status\": \"ok\", \"threshold_quantile\": 0.6, \"threshold\": 0.222222, \"n_exceed\": 5790, \"xi\": -0.3897403747630658, \"sigma\": 0.2992894132162187, \"loglik\": 3451.2619231099334, \"aic\": -6898.523846219867, \"xi_ci95_lo\": -0.411588255433035, \"xi_ci95_hi\": -0.3690672090541793}}, \"n_normalized_distances\": 15023}",
+          "metadata_treebank_id": "en_eslspok",
+          "eval_xi": -0.3276841719469906,
+          "eval_alpha": 2.49020301465924,
+          "eval_n_normalized_distances": 15023.0
+        },
+        {
+          "input": "Tail-shape model comparison for treebank en_ewt",
+          "output": "{\"mrl_chosen_quantile\": 0.5, \"gpd\": {\"status\": \"ok\", \"threshold_quantile\": 0.5, \"threshold\": 0.090909, \"n_exceed\": 14688, \"xi\": 0.22547452396914766, \"sigma\": 0.14993183086044923, \"loglik\": 9871.865046504896, \"aic\": -19739.73009300979, \"xi_ci95_lo\": 0.2041807671975618, \"xi_ci95_hi\": 0.24139885668486588}, \"powerlaw\": {\"status\": \"ok\", \"xmin_quantile\": 0.5, \"xmin\": 0.090909, \"n_tail\": 15286, \"alpha\": 2.1586814667862066, \"loglik\": 10427.023883335361, \"aic\": -20852.047766670723, \"ks_stat\": 0.08110695493291764}, \"akaike\": {\"w_gpd\": 2.9059363852915606e-242, \"w_powerlaw\": 1.0, \"winner\": \"power-law\"}, \"threshold_sensitivity\": {\"minus20pct\": {\"status\": \"ok\", \"threshold_quantile\": 0.5, \"threshold\": 0.090909, \"n_exceed\": 14688, \"xi\": 0.22547452396914766, \"sigma\": 0.14993183086044923, \"loglik\": 9871.865046504896, \"aic\": -19739.73009300979, \"xi_ci95_lo\": 0.205168032122559, \"xi_ci95_hi\": 0.2427481533048212}, \"plus20pct\": {\"status\": \"ok\", \"threshold_quantile\": 0.6, \"threshold\": 0.117647, \"n_exceed\": 11837, \"xi\": 0.12336114913704986, \"sigma\": 0.1814048737137507, \"loglik\": 6909.248313299748, \"aic\": -13814.496626599495, \"xi_ci95_lo\": 0.09886133342011195, \"xi_ci95_hi\": 0.1459183103015179}}, \"n_normalized_distances\": 30228}",
+          "metadata_treebank_id": "en_ewt",
+          "eval_xi": 0.22547452396914766,
+          "eval_alpha": 2.1586814667862066,
+          "eval_n_normalized_distances": 30228.0
+        },
+        {
+          "input": "Tail-shape model comparison for treebank en_gum",
+          "output": "{\"mrl_chosen_quantile\": 0.5, \"gpd\": {\"status\": \"ok\", \"threshold_quantile\": 0.5, \"threshold\": 0.083333, \"n_exceed\": 15767, \"xi\": 0.20793237669018805, \"sigma\": 0.1450609960711967, \"loglik\": 11394.74638568346, \"aic\": -22785.49277136692, \"xi_ci95_lo\": 0.18955370379574432, \"xi_ci95_hi\": 0.22750445080196557}, \"powerlaw\": {\"status\": \"ok\", \"xmin_quantile\": 0.5, \"xmin\": 0.083333, \"n_tail\": 16369, \"alpha\": 2.130218998753235, \"loglik\": 11827.221095171986, \"aic\": -23652.442190343972, \"ks_stat\": 0.08544566007395643}, \"akaike\": {\"w_gpd\": 5.550417151402054e-189, \"w_powerlaw\": 1.0, \"winner\": \"power-law\"}, \"threshold_sensitivity\": {\"minus20pct\": {\"status\": \"ok\", \"threshold_quantile\": 0.5, \"threshold\": 0.083333, \"n_exceed\": 15767, \"xi\": 0.20793237669018805, \"sigma\": 0.1450609960711967, \"loglik\": 11394.74638568346, \"aic\": -22785.49277136692, \"xi_ci95_lo\": 0.18892306181992582, \"xi_ci95_hi\": 0.2266953907931916}, \"plus20pct\": {\"status\": \"ok\", \"threshold_quantile\": 0.6, \"threshold\": 0.111111, \"n_exceed\": 12347, \"xi\": 0.07054779231863824, \"sigma\": 0.18483209766431175, \"loglik\": 7627.079615013203, \"aic\": -15250.159230026406, \"xi_ci95_lo\": 0.05084687147094302, \"xi_ci95_hi\": 0.09349143045595046}}, \"n_normalized_distances\": 31876}",
+          "metadata_treebank_id": "en_gum",
+          "eval_xi": 0.20793237669018805,
+          "eval_alpha": 2.130218998753235,
+          "eval_n_normalized_distances": 31876.0
+        },
+        {
+          "input": "Tail-shape model comparison for treebank fi_tdt",
+          "output": "{\"mrl_chosen_quantile\": 0.5, \"gpd\": {\"status\": \"ok\", \"threshold_quantile\": 0.5, \"threshold\": 0.111111, \"n_exceed\": 12042, \"xi\": -0.012438936209797396, \"sigma\": 0.21714763831862022, \"loglik\": 6497.860022215047, \"aic\": -12991.720044430094, \"xi_ci95_lo\": -0.03745783891034159, \"xi_ci95_hi\": 0.008582305340026528}, \"powerlaw\": {\"status\": \"ok\", \"xmin_quantile\": 0.5, \"xmin\": 0.111111, \"n_tail\": 12758, \"alpha\": 2.1911840693761024, \"loglik\": 6795.836884985605, \"aic\": -13589.67376997121, \"ks_stat\": 0.10813600900335202}, \"akaike\": {\"w_gpd\": 1.4321822337798124e-130, \"w_powerlaw\": 1.0, \"winner\": \"power-law\"}, \"threshold_sensitivity\": {\"minus20pct\": {\"status\": \"ok\", \"threshold_quantile\": 0.5, \"threshold\": 0.111111, \"n_exceed\": 12042, \"xi\": -0.012438936209797396, \"sigma\": 0.21714763831862022, \"loglik\": 6497.860022215047, \"aic\": -12991.720044430094, \"xi_ci95_lo\": -0.03490191528408364, \"xi_ci95_hi\": 0.006319936175821451}, \"plus20pct\": {\"status\": \"ok\", \"threshold_quantile\": 0.6, \"threshold\": 0.142857, \"n_exceed\": 9803, \"xi\": -0.14200195356048753, \"sigma\": 0.2605728410076933, \"loglik\": 4772.558585349001, \"aic\": -9541.117170698002, \"xi_ci95_lo\": -0.17016967836038355, \"xi_ci95_hi\": -0.11710934930068569}}, \"n_normalized_distances\": 24712}",
+          "metadata_treebank_id": "fi_tdt",
+          "eval_xi": -0.012438936209797396,
+          "eval_alpha": 2.1911840693761024,
+          "eval_n_normalized_distances": 24712.0
+        },
+        {
+          "input": "Tail-shape model comparison for treebank fr_gsd",
+          "output": "{\"mrl_chosen_quantile\": 0.5, \"gpd\": {\"status\": \"ok\", \"threshold_quantile\": 0.5, \"threshold\": 0.06383, \"n_exceed\": 23410, \"xi\": 0.5022840032282636, \"sigma\": 0.08080821400124787, \"loglik\": 23722.649923392702, \"aic\": -47441.299846785405, \"xi_ci95_lo\": 0.4870958633442476, \"xi_ci95_hi\": 0.5167469909942776}, \"powerlaw\": {\"status\": \"ok\", \"xmin_quantile\": 0.5, \"xmin\": 0.06383, \"n_tail\": 23495, \"alpha\": 2.135328810668784, \"loglik\": 23439.838210507005, \"aic\": -46877.67642101401, \"ks_stat\": 0.06177158723432968}, \"akaike\": {\"w_gpd\": 1.0, \"w_powerlaw\": 4.080638831756337e-123, \"winner\": \"GPD\"}, \"threshold_sensitivity\": {\"minus20pct\": {\"status\": \"ok\", \"threshold_quantile\": 0.5, \"threshold\": 0.06383, \"n_exceed\": 23410, \"xi\": 0.5022840032282636, \"sigma\": 0.08080821400124787, \"loglik\": 23722.649923392702, \"aic\": -47441.299846785405, \"xi_ci95_lo\": 0.4860503149621532, \"xi_ci95_hi\": 0.5172457425858503}, \"plus20pct\": {\"status\": \"ok\", \"threshold_quantile\": 0.6, \"threshold\": 0.081081, \"n_exceed\": 18732, \"xi\": 0.4464891036751466, \"sigma\": 0.09766325233202569, \"loglik\": 16479.83520878706, \"aic\": -32955.67041757412, \"xi_ci95_lo\": 0.4229326087588549, \"xi_ci95_hi\": 0.46446167386896087}}, \"n_normalized_distances\": 46946}",
+          "metadata_treebank_id": "fr_gsd",
+          "eval_xi": 0.5022840032282636,
+          "eval_alpha": 2.135328810668784,
+          "eval_n_normalized_distances": 46946.0
+        },
+        {
+          "input": "Tail-shape model comparison for treebank fr_rhapsodie",
+          "output": "{\"mrl_chosen_quantile\": 0.5, \"gpd\": {\"status\": \"ok\", \"threshold_quantile\": 0.5, \"threshold\": 0.095238, \"n_exceed\": 8890, \"xi\": 0.04550991168478142, \"sigma\": 0.18695282120894866, \"loglik\": 5613.123325623723, \"aic\": -11222.246651247446, \"xi_ci95_lo\": 0.02164912603660641, \"xi_ci95_hi\": 0.07263918333412535}, \"powerlaw\": {\"status\": \"ok\", \"xmin_quantile\": 0.5, \"xmin\": 0.095238, \"n_tail\": 8997, \"alpha\": 2.1093519367075824, \"loglik\": 4981.864457543801, \"aic\": -9961.728915087602, \"ks_stat\": 0.11582225850330585}, \"akaike\": {\"w_gpd\": 1.0, \"w_powerlaw\": 1.9144825944245132e-274, \"winner\": \"GPD\"}, \"threshold_sensitivity\": {\"minus20pct\": {\"status\": \"ok\", \"threshold_quantile\": 0.5, \"threshold\": 0.095238, \"n_exceed\": 8890, \"xi\": 0.04550991168478142, \"sigma\": 0.18695282120894866, \"loglik\": 5613.123325623723, \"aic\": -11222.246651247446, \"xi_ci95_lo\": 0.017579351543857608, \"xi_ci95_hi\": 0.07210937983104625}, \"plus20pct\": {\"status\": \"ok\", \"threshold_quantile\": 0.6, \"threshold\": 0.125, \"n_exceed\": 7013, \"xi\": -0.12976952777442605, \"sigma\": 0.2425141987226077, \"loglik\": 3832.12750811387, \"aic\": -7660.25501622774, \"xi_ci95_lo\": -0.15534679451978345, \"xi_ci95_hi\": -0.09954504918159278}}, \"n_normalized_distances\": 17851}",
+          "metadata_treebank_id": "fr_rhapsodie",
+          "eval_xi": 0.04550991168478142,
+          "eval_alpha": 2.1093519367075824,
+          "eval_n_normalized_distances": 17851.0
+        },
+        {
+          "input": "Tail-shape model comparison for treebank hi_hdtb",
+          "output": "{\"mrl_chosen_quantile\": 0.5, \"gpd\": {\"status\": \"ok\", \"threshold_quantile\": 0.5, \"threshold\": 0.071429, \"n_exceed\": 19415, \"xi\": 0.3095734296952406, \"sigma\": 0.14143271688173992, \"loglik\": 12549.591653443182, \"aic\": -25095.183306886363, \"xi_ci95_lo\": 0.2846687445295395, \"xi_ci95_hi\": 0.33078891872537525}, \"powerlaw\": {\"status\": \"ok\", \"xmin_quantile\": 0.5, \"xmin\": 0.071429, \"n_tail\": 20401, \"alpha\": 2.0247685921504255, \"loglik\": 14029.524720457535, \"aic\": -28057.04944091507, \"ks_stat\": 0.07530000982448137}, \"akaike\": {\"w_gpd\": 0.0, \"w_powerlaw\": 1.0, \"winner\": \"power-law\"}, \"threshold_sensitivity\": {\"minus20pct\": {\"status\": \"ok\", \"threshold_quantile\": 0.5, \"threshold\": 0.071429, \"n_exceed\": 19415, \"xi\": 0.3095734296952406, \"sigma\": 0.14143271688173992, \"loglik\": 12549.591653443182, \"aic\": -25095.183306886363, \"xi_ci95_lo\": 0.28614996175717783, \"xi_ci95_hi\": 0.3282107846051844}, \"plus20pct\": {\"status\": \"ok\", \"threshold_quantile\": 0.6, \"threshold\": 0.090909, \"n_exceed\": 15772, \"xi\": 0.055966810889678933, \"sigma\": 0.20740032711365636, \"loglik\": 8155.890036627638, \"aic\": -16307.780073255277, \"xi_ci95_lo\": 0.021961794168425756, \"xi_ci95_hi\": 0.08725745708807277}}, \"n_normalized_distances\": 40024}",
+          "metadata_treebank_id": "hi_hdtb",
+          "eval_xi": 0.3095734296952406,
+          "eval_alpha": 2.0247685921504255,
+          "eval_n_normalized_distances": 40024.0
+        },
+        {
+          "input": "Tail-shape model comparison for treebank ja_gsd",
+          "output": "{\"mrl_chosen_quantile\": 0.5, \"gpd\": {\"status\": \"ok\", \"threshold_quantile\": 0.5, \"threshold\": 0.057143, \"n_exceed\": 23122, \"xi\": 0.427190783678424, \"sigma\": 0.0726273839565661, \"loglik\": 27636.43904315192, \"aic\": -55268.87808630384, \"xi_ci95_lo\": 0.41185002778739016, \"xi_ci95_hi\": 0.4444908831155944}, \"powerlaw\": {\"status\": \"ok\", \"xmin_quantile\": 0.5, \"xmin\": 0.057143, \"n_tail\": 23459, \"alpha\": 2.1871755483708064, \"loglik\": 27949.990256751218, \"aic\": -55897.980513502436, \"ks_stat\": 0.0697189821157081}, \"akaike\": {\"w_gpd\": 2.4668551995880254e-137, \"w_powerlaw\": 1.0, \"winner\": \"power-law\"}, \"threshold_sensitivity\": {\"minus20pct\": {\"status\": \"ok\", \"threshold_quantile\": 0.5, \"threshold\": 0.057143, \"n_exceed\": 23122, \"xi\": 0.427190783678424, \"sigma\": 0.0726273839565661, \"loglik\": 27636.43904315192, \"aic\": -55268.87808630384, \"xi_ci95_lo\": 0.4130354138429404, \"xi_ci95_hi\": 0.4416510382356415}, \"plus20pct\": {\"status\": \"ok\", \"threshold_quantile\": 0.6, \"threshold\": 0.071429, \"n_exceed\": 18508, \"xi\": 0.3666830994875582, \"sigma\": 0.0876257631894383, \"loglik\": 19766.55973943039, \"aic\": -39529.11947886078, \"xi_ci95_lo\": 0.34717751983469997, \"xi_ci95_hi\": 0.3816575773350434}}, \"n_normalized_distances\": 46500}",
+          "metadata_treebank_id": "ja_gsd",
+          "eval_xi": 0.427190783678424,
+          "eval_alpha": 2.1871755483708064,
+          "eval_n_normalized_distances": 46500.0
+        },
+        {
+          "input": "Tail-shape model comparison for treebank ko_gsd",
+          "output": "{\"mrl_chosen_quantile\": 0.5, \"gpd\": {\"status\": \"ok\", \"threshold_quantile\": 0.5, \"threshold\": 0.1, \"n_exceed\": 11547, \"xi\": 0.046011492601550213, \"sigma\": 0.19360883062533119, \"loglik\": 6880.62364436184, \"aic\": -13757.24728872368, \"xi_ci95_lo\": 0.02513483684699546, \"xi_ci95_hi\": 0.06980964986239932}, \"powerlaw\": {\"status\": \"ok\", \"xmin_quantile\": 0.5, \"xmin\": 0.1, \"n_tail\": 12332, \"alpha\": 2.1762043888426694, \"loglik\": 7580.299795591771, \"aic\": -15158.599591183542, \"ks_stat\": 0.11222146091890178}, \"akaike\": {\"w_gpd\": 5.014341633092409e-305, \"w_powerlaw\": 1.0, \"winner\": \"power-law\"}, \"threshold_sensitivity\": {\"minus20pct\": {\"status\": \"ok\", \"threshold_quantile\": 0.5, \"threshold\": 0.1, \"n_exceed\": 11547, \"xi\": 0.046011492601550213, \"sigma\": 0.19360883062533119, \"loglik\": 6880.62364436184, \"aic\": -13757.24728872368, \"xi_ci95_lo\": 0.02356352855482894, \"xi_ci95_hi\": 0.063289853959551}, \"plus20pct\": {\"status\": \"ok\", \"threshold_quantile\": 0.6, \"threshold\": 0.128205, \"n_exceed\": 9466, \"xi\": -0.06987714111281393, \"sigma\": 0.23088252374287196, \"loglik\": 5071.228009294604, \"aic\": -10138.456018589208, \"xi_ci95_lo\": -0.09338578097815467, \"xi_ci95_hi\": -0.050288944338171146}}, \"n_normalized_distances\": 23674}",
+          "metadata_treebank_id": "ko_gsd",
+          "eval_xi": 0.046011492601550213,
+          "eval_alpha": 2.1762043888426694,
+          "eval_n_normalized_distances": 23674.0
+        },
+        {
+          "input": "Tail-shape model comparison for treebank nap_rb",
+          "output": "{\"mrl_chosen_quantile\": 0.5, \"gpd\": {\"status\": \"ok\", \"threshold_quantile\": 0.5, \"threshold\": 0.166667, \"n_exceed\": 85, \"xi\": -0.37903879675440155, \"sigma\": 0.31902160532952756, \"loglik\": 44.32952898804582, \"aic\": -84.65905797609165, \"xi_ci95_lo\": -0.6501252259186734, \"xi_ci95_hi\": -0.11873688458948704}, \"powerlaw\": {\"status\": \"ok\", \"xmin_quantile\": 0.5, \"xmin\": 0.166667, \"n_tail\": 92, \"alpha\": 2.455376895855541, \"loglik\": 44.15219220702534, \"aic\": -86.30438441405067, \"ks_stat\": 0.13533859952596683}, \"akaike\": {\"w_gpd\": 0.3051986250454953, \"w_powerlaw\": 0.6948013749545048, \"winner\": \"power-law\"}, \"threshold_sensitivity\": {\"minus20pct\": {\"status\": \"ok\", \"threshold_quantile\": 0.5, \"threshold\": 0.166667, \"n_exceed\": 85, \"xi\": -0.37903879675440155, \"sigma\": 0.31902160532952756, \"loglik\": 44.32952898804582, \"aic\": -84.65905797609165, \"xi_ci95_lo\": -0.7071595426523299, \"xi_ci95_hi\": -0.13050875068005785}, \"plus20pct\": {\"status\": \"ok\", \"threshold_quantile\": 0.6, \"threshold\": 0.2, \"n_exceed\": 66, \"xi\": -0.6307239342303251, \"sigma\": 0.4230309320610932, \"loglik\": 32.40717483366608, \"aic\": -60.814349667332166, \"xi_ci95_lo\": -1.235667358826479, \"xi_ci95_hi\": -0.368349748366314}}, \"n_normalized_distances\": 181}",
+          "metadata_treebank_id": "nap_rb",
+          "eval_xi": -0.37903879675440155,
+          "eval_alpha": 2.455376895855541,
+          "eval_n_normalized_distances": 181.0
+        },
+        {
+          "input": "Tail-shape model comparison for treebank pcm_nsc",
+          "output": "{\"mrl_chosen_quantile\": 0.5, \"gpd\": {\"status\": \"ok\", \"threshold_quantile\": 0.5, \"threshold\": 0.111111, \"n_exceed\": 14037, \"xi\": -0.10692844995314744, \"sigma\": 0.22881173975298758, \"loglik\": 8166.798857923146, \"aic\": -16329.597715846292, \"xi_ci95_lo\": -0.12489521060335916, \"xi_ci95_hi\": -0.08825485101645963}, \"powerlaw\": {\"status\": \"ok\", \"xmin_quantile\": 0.5, \"xmin\": 0.111111, \"n_tail\": 14706, \"alpha\": 2.189227347929818, \"loglik\": 7788.992862483647, \"aic\": -15575.985724967293, \"ks_stat\": 0.12335144359276662}, \"akaike\": {\"w_gpd\": 1.0, \"w_powerlaw\": 2.2658723120465648e-164, \"winner\": \"GPD\"}, \"threshold_sensitivity\": {\"minus20pct\": {\"status\": \"ok\", \"threshold_quantile\": 0.5, \"threshold\": 0.111111, \"n_exceed\": 14037, \"xi\": -0.10692844995314744, \"sigma\": 0.22881173975298758, \"loglik\": 8166.798857923146, \"aic\": -16329.597715846292, \"xi_ci95_lo\": -0.1220849475117548, \"xi_ci95_hi\": -0.088304153153432}, \"plus20pct\": {\"status\": \"ok\", \"threshold_quantile\": 0.6, \"threshold\": 0.147059, \"n_exceed\": 11448, \"xi\": -0.1976288220959218, \"sigma\": 0.2564500907600682, \"loglik\": 6393.448094570618, \"aic\": -12782.896189141236, \"xi_ci95_lo\": -0.22037283671972013, \"xi_ci95_hi\": -0.17601296488144602}}, \"n_normalized_distances\": 28653}",
+          "metadata_treebank_id": "pcm_nsc",
+          "eval_xi": -0.10692844995314744,
+          "eval_alpha": 2.189227347929818,
+          "eval_n_normalized_distances": 28653.0
+        },
+        {
+          "input": "Tail-shape model comparison for treebank ru_syntagrus",
+          "output": "{\"mrl_chosen_quantile\": 0.5, \"gpd\": {\"status\": \"ok\", \"threshold_quantile\": 0.5, \"threshold\": 0.086957, \"n_exceed\": 16170, \"xi\": 0.2218488185927615, \"sigma\": 0.14798276599873564, \"loglik\": 11138.4377025859, \"aic\": -22272.8754051718, \"xi_ci95_lo\": 0.20234271157427422, \"xi_ci95_hi\": 0.2403611614822597}, \"powerlaw\": {\"status\": \"ok\", \"xmin_quantile\": 0.5, \"xmin\": 0.086957, \"n_tail\": 16376, \"alpha\": 2.1109648789091313, \"loglik\": 10602.673456211109, \"aic\": -21203.346912422217, \"ks_stat\": 0.0925249907920846}, \"akaike\": {\"w_gpd\": 1.0, \"w_powerlaw\": 5.686416683033721e-233, \"winner\": \"GPD\"}, \"threshold_sensitivity\": {\"minus20pct\": {\"status\": \"ok\", \"threshold_quantile\": 0.5, \"threshold\": 0.086957, \"n_exceed\": 16170, \"xi\": 0.2218488185927615, \"sigma\": 0.14798276599873564, \"loglik\": 11138.4377025859, \"aic\": -22272.8754051718, \"xi_ci95_lo\": 0.2030223350014742, \"xi_ci95_hi\": 0.2444630662244662}, \"plus20pct\": {\"status\": \"ok\", \"threshold_quantile\": 0.6, \"threshold\": 0.111111, \"n_exceed\": 12921, \"xi\": 0.06312275971104106, \"sigma\": 0.19368098265578365, \"loglik\": 7473.8408717726115, \"aic\": -14943.681743545223, \"xi_ci95_lo\": 0.0460070507511043, \"xi_ci95_hi\": 0.0844656974298836}}, \"n_normalized_distances\": 32489}",
+          "metadata_treebank_id": "ru_syntagrus",
+          "eval_xi": 0.2218488185927615,
+          "eval_alpha": 2.1109648789091313,
+          "eval_n_normalized_distances": 32489.0
+        },
+        {
+          "input": "Tail-shape model comparison for treebank sl_ssj",
+          "output": "{\"mrl_chosen_quantile\": 0.5, \"gpd\": {\"status\": \"ok\", \"threshold_quantile\": 0.5, \"threshold\": 0.086957, \"n_exceed\": 18168, \"xi\": 0.2491381096819045, \"sigma\": 0.137780848926968, \"loglik\": 13316.382069343634, \"aic\": -26628.764138687267, \"xi_ci95_lo\": 0.23375742574950506, \"xi_ci95_hi\": 0.2662657395085474}, \"powerlaw\": {\"status\": \"ok\", \"xmin_quantile\": 0.5, \"xmin\": 0.086957, \"n_tail\": 18459, \"alpha\": 2.143883099295004, \"loglik\": 12968.463309274113, \"aic\": -25934.926618548227, \"ks_stat\": 0.09451134902694946}, \"akaike\": {\"w_gpd\": 1.0, \"w_powerlaw\": 2.1632007911125817e-151, \"winner\": \"GPD\"}, \"threshold_sensitivity\": {\"minus20pct\": {\"status\": \"ok\", \"threshold_quantile\": 0.5, \"threshold\": 0.086957, \"n_exceed\": 18168, \"xi\": 0.2491381096819045, \"sigma\": 0.137780848926968, \"loglik\": 13316.382069343634, \"aic\": -26628.764138687267, \"xi_ci95_lo\": 0.2327159315446832, \"xi_ci95_hi\": 0.2673742653491474}, \"plus20pct\": {\"status\": \"ok\", \"threshold_quantile\": 0.6, \"threshold\": 0.111111, \"n_exceed\": 14599, \"xi\": 0.13888156931578205, \"sigma\": 0.17010690297131859, \"loglik\": 9232.84197933217, \"aic\": -18461.68395866434, \"xi_ci95_lo\": 0.12231384684505217, \"xi_ci95_hi\": 0.15988762532235526}}, \"n_normalized_distances\": 36786}",
+          "metadata_treebank_id": "sl_ssj",
+          "eval_xi": 0.2491381096819045,
+          "eval_alpha": 2.143883099295004,
+          "eval_n_normalized_distances": 36786.0
+        },
+        {
+          "input": "Tail-shape model comparison for treebank sl_sst",
+          "output": "{\"mrl_chosen_quantile\": 0.5, \"gpd\": {\"status\": \"ok\", \"threshold_quantile\": 0.5, \"threshold\": 0.090909, \"n_exceed\": 13689, \"xi\": 0.02585425825494243, \"sigma\": 0.19856197287435617, \"loglik\": 8087.4031526881845, \"aic\": -16170.806305376369, \"xi_ci95_lo\": 0.0050533099285466196, \"xi_ci95_hi\": 0.04432157759999239}, \"powerlaw\": {\"status\": \"ok\", \"xmin_quantile\": 0.5, \"xmin\": 0.090909, \"n_tail\": 14178, \"alpha\": 2.0740464707609245, \"loglik\": 7631.608027166774, \"aic\": -15261.216054333549, \"ks_stat\": 0.1160946475834444}, \"akaike\": {\"w_gpd\": 1.0, \"w_powerlaw\": 3.054826782705939e-198, \"winner\": \"GPD\"}, \"threshold_sensitivity\": {\"minus20pct\": {\"status\": \"ok\", \"threshold_quantile\": 0.5, \"threshold\": 0.090909, \"n_exceed\": 13689, \"xi\": 0.02585425825494243, \"sigma\": 0.19856197287435617, \"loglik\": 8087.4031526881845, \"aic\": -16170.806305376369, \"xi_ci95_lo\": 0.009214964154342762, \"xi_ci95_hi\": 0.043789999503643734}, \"plus20pct\": {\"status\": \"ok\", \"threshold_quantile\": 0.6, \"threshold\": 0.125, \"n_exceed\": 10903, \"xi\": -0.09505039078633166, \"sigma\": 0.23799047620622463, \"loglik\": 5784.136802649187, \"aic\": -11564.273605298375, \"xi_ci95_lo\": -0.12152192868987437, \"xi_ci95_hi\": -0.07953678078260654}}, \"n_normalized_distances\": 28295}",
+          "metadata_treebank_id": "sl_sst",
+          "eval_xi": 0.02585425825494243,
+          "eval_alpha": 2.0740464707609245,
+          "eval_n_normalized_distances": 28295.0
+        },
+        {
+          "input": "Tail-shape model comparison for treebank tr_atis",
+          "output": "{\"mrl_chosen_quantile\": 0.5, \"gpd\": {\"status\": \"ok\", \"threshold_quantile\": 0.5, \"threshold\": 0.142857, \"n_exceed\": 6952, \"xi\": -0.04336316138243194, \"sigma\": 0.22843383580125004, \"loglik\": 3614.117961362903, \"aic\": -7224.235922725806, \"xi_ci95_lo\": -0.07910948279030104, \"xi_ci95_hi\": -0.008636230088150952}, \"powerlaw\": {\"status\": \"ok\", \"xmin_quantile\": 0.5, \"xmin\": 0.142857, \"n_tail\": 8292, \"alpha\": 2.538900481431074, \"loglik\": 6029.650006599955, \"aic\": -12057.30001319991, \"ks_stat\": 0.16160154365653642}, \"akaike\": {\"w_gpd\": 0.0, \"w_powerlaw\": 1.0, \"winner\": \"power-law\"}, \"threshold_sensitivity\": {\"minus20pct\": {\"status\": \"ok\", \"threshold_quantile\": 0.5, \"threshold\": 0.142857, \"n_exceed\": 6952, \"xi\": -0.04336316138243194, \"sigma\": 0.22843383580125004, \"loglik\": 3614.117961362903, \"aic\": -7224.235922725806, \"xi_ci95_lo\": -0.0736521015266255, \"xi_ci95_hi\": -0.008556933120767296}, \"plus20pct\": {\"status\": \"ok\", \"threshold_quantile\": 0.6, \"threshold\": 0.166667, \"n_exceed\": 5623, \"xi\": -0.2755347772975033, \"sigma\": 0.3128571418662339, \"loglik\": 2460.2440795616103, \"aic\": -4916.488159123221, \"xi_ci95_lo\": -0.3121171057794392, \"xi_ci95_hi\": -0.2379497731566037}}, \"n_normalized_distances\": 14763}",
+          "metadata_treebank_id": "tr_atis",
+          "eval_xi": -0.04336316138243194,
+          "eval_alpha": 2.538900481431074,
+          "eval_n_normalized_distances": 14763.0
+        },
+        {
+          "input": "Tail-shape model comparison for treebank tr_imst",
+          "output": "{\"mrl_chosen_quantile\": 0.5, \"gpd\": {\"status\": \"ok\", \"threshold_quantile\": 0.5, \"threshold\": 0.125, \"n_exceed\": 9376, \"xi\": -0.15733895730840997, \"sigma\": 0.23845925001401197, \"loglik\": 5540.21012662862, \"aic\": -11076.42025325724, \"xi_ci95_lo\": -0.18008689353475668, \"xi_ci95_hi\": -0.13273341529723068}, \"powerlaw\": {\"status\": \"ok\", \"xmin_quantile\": 0.5, \"xmin\": 0.125, \"n_tail\": 10064, \"alpha\": 2.3006901714727555, \"loglik\": 5771.844553430139, \"aic\": -11541.689106860278, \"ks_stat\": 0.12765309787931955}, \"akaike\": {\"w_gpd\": 9.292918735842842e-102, \"w_powerlaw\": 1.0, \"winner\": \"power-law\"}, \"threshold_sensitivity\": {\"minus20pct\": {\"status\": \"ok\", \"threshold_quantile\": 0.5, \"threshold\": 0.125, \"n_exceed\": 9376, \"xi\": -0.15733895730840997, \"sigma\": 0.23845925001401197, \"loglik\": 5540.21012662862, \"aic\": -11076.42025325724, \"xi_ci95_lo\": -0.1805924349164234, \"xi_ci95_hi\": -0.1344118570918061}, \"plus20pct\": {\"status\": \"ok\", \"threshold_quantile\": 0.6, \"threshold\": 0.157895, \"n_exceed\": 7981, \"xi\": -0.19518711731374844, \"sigma\": 0.24657584061847432, \"loglik\": 4750.363217284642, \"aic\": -9496.726434569284, \"xi_ci95_lo\": -0.21979829874089543, \"xi_ci95_hi\": -0.1715775067594127}}, \"n_normalized_distances\": 20090}",
+          "metadata_treebank_id": "tr_imst",
+          "eval_xi": -0.15733895730840997,
+          "eval_alpha": 2.3006901714727555,
+          "eval_n_normalized_distances": 20090.0
+        },
+        {
+          "input": "Tail-shape model comparison for treebank zh_gsd",
+          "output": "{\"mrl_chosen_quantile\": 0.5, \"gpd\": {\"status\": \"ok\", \"threshold_quantile\": 0.5, \"threshold\": 0.071429, \"n_exceed\": 23498, \"xi\": 0.18541748385963458, \"sigma\": 0.14794943762666785, \"loglik\": 17047.6050865452, \"aic\": -34091.2101730904, \"xi_ci95_lo\": 0.1690674624133482, \"xi_ci95_hi\": 0.20258731704935606}, \"powerlaw\": {\"status\": \"ok\", \"xmin_quantile\": 0.5, \"xmin\": 0.071429, \"n_tail\": 24323, \"alpha\": 2.034139830829733, \"loglik\": 17163.138447532132, \"aic\": -34324.276895064264, \"ks_stat\": 0.0924978197579272}, \"akaike\": {\"w_gpd\": 2.4558642986506395e-51, \"w_powerlaw\": 1.0, \"winner\": \"power-law\"}, \"threshold_sensitivity\": {\"minus20pct\": {\"status\": \"ok\", \"threshold_quantile\": 0.5, \"threshold\": 0.071429, \"n_exceed\": 23498, \"xi\": 0.18541748385963458, \"sigma\": 0.14794943762666785, \"loglik\": 17047.6050865452, \"aic\": -34091.2101730904, \"xi_ci95_lo\": 0.16681440331198596, \"xi_ci95_hi\": 0.20294310251966408}, \"plus20pct\": {\"status\": \"ok\", \"threshold_quantile\": 0.6, \"threshold\": 0.096774, \"n_exceed\": 19058, \"xi\": 0.0809537168000771, \"sigma\": 0.17788694081796858, \"loglik\": 12304.698349452254, \"aic\": -24605.396698904508, \"xi_ci95_lo\": 0.06255690379476339, \"xi_ci95_hi\": 0.09776411102419223}}, \"n_normalized_distances\": 47846}",
+          "metadata_treebank_id": "zh_gsd",
+          "eval_xi": 0.18541748385963458,
+          "eval_alpha": 2.034139830829733,
+          "eval_n_normalized_distances": 47846.0
+        }
+      ]
+    },
+    {
+      "dataset": "qualitative_longest_arc_inspection",
+      "examples": [
+        {
+          "input": "Qualitative inspection of the 20 longest-distance arcs (>p95) per register, English ESLSpok vs EWT",
+          "output": "{\"spoken\": {\"p95_threshold\": 0.666667, \"n_sampled\": 20, \"category_counts\": {\"other\": 11, \"topicalization/scrambling\": 4, \"coordination/apposition\": 3, \"extraposition\": 2}, \"examples\": [{\"sent_id\": 8571, \"deprel\": \"parataxis\", \"norm_dist\": 0.875}, {\"sent_id\": 8699, \"deprel\": \"det\", \"norm_dist\": 0.842105}, {\"sent_id\": 7887, \"deprel\": \"compound\", \"norm_dist\": 0.714286}, {\"sent_id\": 7878, \"deprel\": \"obl\", \"norm_dist\": 0.7}, {\"sent_id\": 8679, \"deprel\": \"nsubj\", \"norm_dist\": 0.75}, {\"sent_id\": 8748, \"deprel\": \"dislocated\", \"norm_dist\": 0.705882}, {\"sent_id\": 7745, \"deprel\": \"advmod\", \"norm_dist\": 0.727273}, {\"sent_id\": 7459, \"deprel\": \"obj\", \"norm_dist\": 0.8}, {\"sent_id\": 8832, \"deprel\": \"advcl\", \"norm_dist\": 0.72}, {\"sent_id\": 7694, \"deprel\": \"conj\", \"norm_dist\": 0.75}]}, \"written\": {\"p95_threshold\": 0.625, \"n_sampled\": 20, \"category_counts\": {\"other\": 6, \"topicalization/scrambling\": 4, \"extraposition\": 4, \"coordination/apposition\": 3, \"disfluency/filler\": 3}, \"examples\": [{\"sent_id\": 10560, \"deprel\": \"conj\", \"norm_dist\": 0.818182}, {\"sent_id\": 10004, \"deprel\": \"nmod:poss\", \"norm_dist\": 0.928571}, {\"sent_id\": 9675, \"deprel\": \"nmod\", \"norm_dist\": 0.818182}, {\"sent_id\": 9659, \"deprel\": \"nmod\", \"norm_dist\": 0.961538}, {\"sent_id\": 9718, \"deprel\": \"obj\", \"norm_dist\": 0.777778}, {\"sent_id\": 9894, \"deprel\": \"punct\", \"norm_dist\": 0.875}, {\"sent_id\": 10925, \"deprel\": \"obj\", \"norm_dist\": 0.875}, {\"sent_id\": 10869, \"deprel\": \"obj\", \"norm_dist\": 0.846154}, {\"sent_id\": 10893, \"deprel\": \"nmod\", \"norm_dist\": 0.764706}, {\"sent_id\": 9438, \"deprel\": \"obl\", \"norm_dist\": 0.925926}]}}",
+          "metadata_pair_name": "english",
+          "eval_n_categories_spoken": 4.0
+        }
+      ]
+    }
+  ]
+}
