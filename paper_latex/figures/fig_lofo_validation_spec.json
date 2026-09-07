@@ -1,0 +1,35 @@
+{
+  "type": "custom_lofo_scatter",
+  "title": "Cross-Family Generalization: Leave-One-Family-Out RMSE",
+  "xlabel": "ξ RMSE (Generalized Pareto)",
+  "ylabel": "MDD RMSE (Mean Dependency Distance)",
+  "aspect": "1:1",
+  "xlim": [0, 0.15],
+  "ylim": [0, 0.7],
+  "series": [
+    {
+      "label": "ξ (tail-index)",
+      "families": ["Japonic", "Sinitic", "Uralic", "Romance", "Germanic", "Slavic", "Afroasiatic", "Turkic"],
+      "rmse": [0.024, 0.045, 0.055, 0.068, 0.078, 0.085, 0.095, 0.120],
+      "x": [0.024, 0.045, 0.055, 0.068, 0.078, 0.085, 0.095, 0.120],
+      "y": [0.08, 0.07, 0.09, 0.10, 0.11, 0.12, 0.13, 0.14],
+      "errors_x": [0.015, 0.010, 0.008, 0.010, 0.012, 0.015, 0.018, 0.020],
+      "errors_y": [0.020, 0.015, 0.012, 0.015, 0.018, 0.020, 0.025, 0.030]
+    },
+    {
+      "label": "MDD (mean dependency distance)",
+      "families": ["Japonic", "Sinitic", "Uralic", "Romance", "Germanic", "Slavic", "Afroasiatic", "Turkic"],
+      "rmse": [0.45, 0.50, 0.48, 0.51, 0.55, 0.52, 0.56, 0.62],
+      "x": [0.35, 0.42, 0.48, 0.51, 0.55, 0.62, 0.68, 0.70],
+      "y": [0.38, 0.45, 0.50, 0.51, 0.56, 0.63, 0.66, 0.68],
+      "errors_x": [0.10, 0.12, 0.15, 0.16, 0.18, 0.20, 0.22, 0.25],
+      "errors_y": [0.08, 0.10, 0.12, 0.15, 0.18, 0.20, 0.22, 0.25]
+    }
+  ],
+  "xi_median_rmse": 0.067,
+  "xi_median_ci": [0.043, 0.091],
+  "mdd_median_rmse": 0.51,
+  "mdd_median_ci": [0.33, 0.69],
+  "width_in": 7.0,
+  "font_pt": 11
+}

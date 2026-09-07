@@ -1,0 +1,91 @@
+\begin{thebibliography}{13}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Bates et~al.(2018)Bates, Kliegl, Vasishth, and Baayen]{Bates2018}
+D.~Bates, Reinhold Kliegl, S.~Vasishth, and Harald Baayen.
+\newblock Parsimonious mixed models.
+\newblock \emph{arXiv preprint arXiv:1506.04967}, 2018.
+
+\bibitem[Beirlant et~al.(2004)Beirlant, Goegebeur, Segers, and
+  Teugels]{Beirlant2004}
+Jan Beirlant, Yuri Goegebeur, Johan Segers, and Jozef~L. Teugels.
+\newblock \emph{Statistics of Extremes: Theory and Applications}.
+\newblock John Wiley \& Sons, 2004.
+\newblock \doi{10.1002/0470012382}.
+
+\bibitem[Clauset et~al.(2009)Clauset, Shalizi, and Newman]{Clauset2009}
+Aaron Clauset, Cosma~Rohilla Shalizi, and M.~E.~J. Newman.
+\newblock Power-law distributions in empirical data.
+\newblock \emph{SIAM Review}, 51\penalty0 (4):\penalty0 661--703, 2009.
+\newblock \doi{10.1137/070710111}.
+
+\bibitem[de~Marneffe and Nivre(2019)]{deMarneffe2019}
+Marie-Catherine de~Marneffe and Joakim Nivre.
+\newblock Dependency grammar.
+\newblock \emph{Annual Review of Linguistics}, 5:\penalty0 197--218, 2019.
+\newblock \doi{10.1146/annurev-linguistics-011718-011842}.
+
+\bibitem[Dryer and Haspelmath(2013)]{Dryer2013}
+Matthew~S. Dryer and Martin Haspelmath.
+\newblock \emph{The World Atlas of Language Structures Online}.
+\newblock Max Planck Institute for Evolutionary Anthropology, Leipzig, 2013.
+\newblock URL \url{https://wals.info/}.
+
+\bibitem[Futrell et~al.(2015)Futrell, Mahowald, and Gibson]{Futrell2015}
+Richard Futrell, Kyle Mahowald, and E.~Gibson.
+\newblock Large-scale evidence of dependency length minimization in 37
+  languages.
+\newblock \emph{Proceedings of the National Academy of Sciences}, 112\penalty0
+  (33):\penalty0 10336--10341, 2015.
+\newblock \doi{10.1073/pnas.1502134112}.
+
+\bibitem[Gildea and Temperley(2010)]{Gildea2010}
+Daniel Gildea and David Temperley.
+\newblock Do grammars minimize dependency length?
+\newblock \emph{Cognitive Science}, 34\penalty0 (2):\penalty0 286--310, 2010.
+\newblock \doi{10.1111/j.1551-6709.2009.01073.x}.
+
+\bibitem[Hawkins(1994)]{Hawkins1994}
+John~A. Hawkins.
+\newblock \emph{A Performance Theory of Order and Constituency}.
+\newblock Cambridge Studies in Linguistics. Cambridge University Press, 1994.
+
+\bibitem[i~Cancho et~al.(2004)i~Cancho, Sol\'{e}, and
+  K\"{o}hler]{FerreriCancho2004}
+Ramon~Ferrer i~Cancho, Ricard~V. Sol\'{e}, and Reinhard K\"{o}hler.
+\newblock Patterns in syntactic dependency networks.
+\newblock \emph{Physical Review E}, 69\penalty0 (5):\penalty0 051915, 2004.
+\newblock \doi{10.1103/PhysRevE.69.051915}.
+
+\bibitem[Lewis and Vasishth(2005)]{Lewis2005}
+Richard~L. Lewis and S.~Vasishth.
+\newblock An activation-based model of sentence processing as skilled memory
+  retrieval.
+\newblock \emph{Cognitive Science}, 29\penalty0 (3):\penalty0 375--419, 2005.
+\newblock \doi{10.1207/s15516709cog0000_25}.
+
+\bibitem[Liu et~al.(2017)Liu, Xu, and Liang]{Liu2017}
+Haitao Liu, Chunshan Xu, and Junying Liang.
+\newblock Dependency distance: A new perspective on syntactic patterns in
+  natural languages.
+\newblock \emph{Physics of Life Reviews}, 21:\penalty0 171--193, 2017.
+\newblock \doi{10.1016/j.plrev.2017.03.002}.
+
+\bibitem[Petrini and i~Cancho(2025)]{Petrini2025}
+Sonia Petrini and Ramon~Ferrer i~Cancho.
+\newblock The distribution of syntactic dependency distances.
+\newblock \emph{Glottometrics}, 58:\penalty0 35--94, 2025.
+\newblock \doi{10.53482/2025_58_424}.
+
+\bibitem[Temperley and Gildea(2018)]{Temperley2018}
+David Temperley and Daniel Gildea.
+\newblock Minimizing syntactic dependency lengths: Typological/cognitive
+  universal?
+\newblock \emph{Annual Review of Linguistics}, 4:\penalty0 1--15, 2018.
+\newblock \doi{10.1146/annurev-linguistics-011817-045617}.
+
+\end{thebibliography}

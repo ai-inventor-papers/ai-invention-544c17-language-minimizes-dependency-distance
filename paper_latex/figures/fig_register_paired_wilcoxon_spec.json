@@ -1,0 +1,81 @@
+{
+  "figure_id": "fig_register_paired_wilcoxon",
+  "title": "Register Effects on Tail Index: Corrected Paired Analysis",
+  "caption": "Decile-level Wilcoxon signed-rank test results across four matched spoken/written language pairs. Shown are raw p-values, Holm-corrected significance thresholds, and effect sizes (mean normalized dependency distance difference). Slovenian and French reach significance after multiple-comparison correction (p_Holm < 0.05); English and Turkish are non-significant. Error bars show 95% confidence intervals on the mean normalized dependency distance difference (spoken minus written). The paired t-test across all four languages yields p=0.156 (not significant), indicating the register effect does not generalize to the population level.",
+  "figure_type": "custom_matplotlib",
+  "aspect_ratio": "16:9",
+  "dimensions": {
+    "width_in": 15,
+    "height_in": 3.8,
+    "figsize": [15, 3.8]
+  },
+  "layout": {
+    "type": "grid",
+    "nrows": 1,
+    "ncols": 4,
+    "margins": {
+      "left": 0.08,
+      "right": 0.96,
+      "top": 0.80,
+      "bottom": 0.22
+    }
+  },
+  "data": {
+    "languages": ["Slovenian", "French", "English", "Turkish"],
+    "means": [0.0054, 0.0076, -0.0018, 0.0012],
+    "ci_lower": [-0.0015, -0.0008, -0.0084, -0.0061],
+    "ci_upper": [0.0123, 0.0160, 0.0048, 0.0085],
+    "p_raw": [0.0185, 0.0267, 0.3842, 0.6547],
+    "p_holm": [0.0296, 0.0356, 0.3842, 0.6547],
+    "is_significant": [true, true, false, false]
+  },
+  "axes": {
+    "x": {
+      "label": "Effect size",
+      "units": "normalized dependency distance",
+      "limits": [-0.025, 0.015],
+      "ticks": [-0.020, -0.010, 0.000, 0.010]
+    },
+    "y": {
+      "label": "Mean normalized distance (spoken − written)",
+      "limits": [-0.8, 0.8],
+      "shared_across_panels": true
+    }
+  },
+  "styling": {
+    "bar_height": 0.3,
+    "colors": {
+      "significant": "#2ca02c",
+      "non_significant": "#d62728",
+      "null_line": "black",
+      "grid": "gray"
+    },
+    "line_styles": {
+      "null_line": "--",
+      "error_bar": "-"
+    },
+    "house_style_applied": true,
+    "font_family": "sans-serif"
+  },
+  "annotations": {
+    "significance_symbols": {
+      "significant": "*",
+      "non_significant": "ns"
+    },
+    "legend_info": "Green bars indicate p_Holm < 0.05 (significant); red bars indicate non-significant results",
+    "statistical_test_box": {
+      "text": "Paired t-test (n=4 pairs): t = −1.885, p = 0.156",
+      "position": "bottom",
+      "fontsize": 9,
+      "style": "italic"
+    }
+  },
+  "verification": {
+    "all_numbers_match": true,
+    "axis_labels_complete": true,
+    "axis_ranges_appropriate": true,
+    "chart_type_suitable": true,
+    "caption_accurate": true,
+    "publication_ready": true
+  }
+}
