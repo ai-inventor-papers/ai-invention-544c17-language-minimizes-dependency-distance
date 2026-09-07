@@ -1,0 +1,642 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tail Risk in Dependency Distance</title>
+<style>
+  :root{
+    --bg:#fbfaf8;
+    --ink:#1b1a17;
+    --ink-soft:#514e47;
+    --rule:#ddd8cf;
+    --accent:#8a3324;
+    --card-bg:#ffffff;
+    --code-bg:#f1efe9;
+    --max:780px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto;}
+    *{animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important;}
+  }
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    font-size:18px;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  .skip-link{
+    position:absolute; left:-999px; top:auto;
+    background:var(--ink); color:#fff; padding:10px 16px;
+    z-index:1000; border-radius:4px;
+  }
+  .skip-link:focus{
+    left:12px; top:12px;
+  }
+  a{color:var(--accent);}
+  a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
+    outline:3px solid var(--accent);
+    outline-offset:2px;
+  }
+  img{max-width:100%; display:block;}
+
+  header.hero{
+    padding:64px 24px 40px;
+    border-bottom:1px solid var(--rule);
+  }
+  .hero-inner{max-width:var(--max); margin:0 auto;}
+  .kicker{
+    text-transform:uppercase;
+    letter-spacing:0.08em;
+    font-size:13px;
+    color:var(--ink-soft);
+    margin:0 0 14px;
+    font-weight:600;
+  }
+  h1{
+    font-size:clamp(30px,4.2vw,44px);
+    line-height:1.15;
+    margin:0 0 18px;
+    font-weight:700;
+    letter-spacing:-0.01em;
+  }
+  .authors{
+    font-size:16px;
+    color:var(--ink-soft);
+    margin:0 0 28px;
+  }
+  .tldr{
+    font-size:19px;
+    line-height:1.7;
+    margin:0 0 28px;
+  }
+  .tldr strong{font-weight:700;}
+  .hero-links{
+    display:flex; flex-wrap:wrap; gap:12px;
+  }
+  .btn{
+    display:inline-block;
+    padding:11px 20px;
+    border-radius:6px;
+    text-decoration:none;
+    font-weight:600;
+    font-size:15px;
+    border:1px solid var(--ink);
+  }
+  .btn-primary{background:var(--ink); color:#fff;}
+  .btn-primary:hover{background:#000;}
+  .btn-secondary{background:transparent; color:var(--ink);}
+  .btn-secondary:hover{background:var(--code-bg);}
+
+  nav.sectionnav{
+    position:sticky; top:0; z-index:50;
+    background:rgba(251,250,248,0.96);
+    backdrop-filter:saturate(120%) blur(2px);
+    border-bottom:1px solid var(--rule);
+  }
+  .sectionnav-inner{
+    max-width:var(--max);
+    margin:0 auto;
+    display:flex;
+    gap:4px;
+    overflow-x:auto;
+    padding:0 24px;
+  }
+  .sectionnav a{
+    white-space:nowrap;
+    text-decoration:none;
+    color:var(--ink-soft);
+    font-size:14px;
+    font-weight:600;
+    padding:14px 10px;
+    border-bottom:3px solid transparent;
+  }
+  .sectionnav a.active{
+    color:var(--ink);
+    border-bottom-color:var(--accent);
+  }
+  .sectionnav a:hover{color:var(--ink);}
+
+  main{max-width:var(--max); margin:0 auto; padding:0 24px;}
+  section{padding:52px 0; border-bottom:1px solid var(--rule);}
+  section:last-of-type{border-bottom:none;}
+  h2{
+    font-size:clamp(24px,3vw,30px);
+    margin:0 0 8px;
+    font-weight:700;
+    letter-spacing:-0.01em;
+  }
+  .section-lede{
+    color:var(--ink-soft);
+    margin:0 0 28px;
+    font-size:16px;
+  }
+  h3{font-size:19px; margin:0 0 8px; font-weight:700;}
+  p{margin:0 0 16px;}
+
+  .cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+  }
+  .card{
+    background:var(--card-bg);
+    border:1px solid var(--rule);
+    border-radius:8px;
+    padding:20px;
+  }
+  .card p{margin:0; font-size:16px; color:var(--ink-soft);}
+
+  .method-figure{
+    margin:0 0 28px;
+    border:1px solid var(--rule);
+    border-radius:8px;
+    overflow:hidden;
+    background:#fff;
+  }
+  .method-figure img{width:100%;}
+  figcaption{
+    padding:14px 18px;
+    font-size:14.5px;
+    color:var(--ink-soft);
+    line-height:1.55;
+  }
+  .method-steps{
+    display:grid;
+    gap:16px;
+    margin:0 0 24px;
+    padding:0;
+    list-style:none;
+    counter-reset:step;
+  }
+  .method-steps li{
+    counter-increment:step;
+    position:relative;
+    padding-left:44px;
+  }
+  .method-steps li::before{
+    content:counter(step);
+    position:absolute; left:0; top:0;
+    width:30px; height:30px;
+    border-radius:50%;
+    background:var(--ink);
+    color:#fff;
+    font-size:14px;
+    font-weight:700;
+    display:flex; align-items:center; justify-content:center;
+  }
+  .method-steps h3{margin-bottom:4px;}
+  .method-steps p{margin:0; color:var(--ink-soft); font-size:16px;}
+
+  table{
+    width:100%;
+    border-collapse:collapse;
+    font-size:15px;
+    margin:0;
+  }
+  th,td{
+    text-align:left;
+    padding:12px 10px;
+    border-bottom:1px solid var(--rule);
+    vertical-align:top;
+  }
+  th{font-weight:700; color:var(--ink);}
+  .table-scroll{overflow-x:auto; border:1px solid var(--rule); border-radius:8px;}
+  .table-scroll table{min-width:560px;}
+  .num{font-variant-numeric:tabular-nums; font-weight:700;}
+  .against{color:var(--ink-soft); font-size:14px;}
+
+  .results-list{display:grid; gap:18px; margin:28px 0 0;}
+  .result-row{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:4px;
+    padding:18px 0;
+    border-top:1px solid var(--rule);
+  }
+  .result-row:first-child{border-top:none; padding-top:0;}
+  .result-headline{font-size:17px; font-weight:600;}
+  .result-headline .num{color:var(--accent);}
+  .result-sub{color:var(--ink-soft); font-size:14.5px;}
+
+  .gallery{
+    display:grid;
+    gap:28px;
+  }
+  .gallery figure{margin:0;}
+  .gallery button.thumb{
+    display:block;
+    width:100%;
+    padding:0;
+    border:1px solid var(--rule);
+    border-radius:8px;
+    background:#fff;
+    cursor:zoom-in;
+    overflow:hidden;
+  }
+  .gallery button.thumb img{width:100%;}
+  .gallery figcaption{padding-top:12px; padding-left:2px; padding-right:2px;}
+
+  .limitations ul{margin:0; padding-left:22px;}
+  .limitations li{margin-bottom:14px; font-size:16.5px;}
+
+  footer{
+    padding:44px 24px 64px;
+    border-top:1px solid var(--rule);
+  }
+  .footer-inner{max-width:var(--max); margin:0 auto;}
+  .footer-links{display:flex; gap:20px; flex-wrap:wrap; margin-bottom:24px;}
+  .citation{
+    background:var(--code-bg);
+    border-radius:8px;
+    padding:16px 18px;
+    font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+    font-size:13px;
+    overflow-x:auto;
+    white-space:pre;
+    color:var(--ink);
+  }
+  .footer-note{color:var(--ink-soft); font-size:14px; margin-top:20px;}
+
+  .lightbox{
+    position:fixed; inset:0;
+    background:rgba(20,18,15,0.92);
+    display:none;
+    align-items:center;
+    justify-content:center;
+    padding:40px 20px;
+    z-index:1000;
+  }
+  .lightbox.open{display:flex;}
+  .lightbox-content{
+    max-width:min(1100px,92vw);
+    max-height:88vh;
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+  }
+  .lightbox-content img{
+    max-height:70vh;
+    width:auto;
+    max-width:100%;
+    margin:0 auto;
+    border-radius:6px;
+    background:#fff;
+  }
+  .lightbox-caption{
+    color:#f1efe9;
+    font-size:14.5px;
+    line-height:1.55;
+    max-height:16vh;
+    overflow-y:auto;
+  }
+  .lightbox-close{
+    position:absolute;
+    top:18px; right:18px;
+    background:#fff;
+    color:var(--ink);
+    border:none;
+    border-radius:50%;
+    width:44px; height:44px;
+    font-size:22px;
+    line-height:1;
+    cursor:pointer;
+  }
+  .lightbox-close:hover{background:#eee;}
+
+  @media (max-width:600px){
+    body{font-size:16.5px;}
+    header.hero{padding:44px 20px 32px;}
+    section{padding:36px 0;}
+    main{padding:0 20px;}
+  }
+</style>
+</head>
+<body>
+<a href="#main" class="skip-link">Skip to main content</a>
+
+<header class="hero">
+  <div class="hero-inner">
+    <p class="kicker">Computational Linguistics &middot; Universal Dependencies</p>
+    <h1>Tail Risk in Dependency Distance: A Generalized Pareto Analysis Across 18 Language Treebanks</h1>
+    <p class="authors">Anonymous submission</p>
+    <p class="tldr">
+      Dependency distance research has always summarized how far words sit from their syntactic
+      heads using an average. This paper asks whether the average is the wrong summary and fits
+      extreme value theory instead, treating each treebank's longest dependencies as a tail to be
+      modeled rather than noise to be averaged away. Across 18 Universal Dependencies treebanks,
+      the resulting shape parameter <strong>&xi;</strong> tracks head-finality typology <strong>1.9&times;</strong>
+      more strongly than mean dependency distance does, and generalizes across language families
+      with an order of magnitude lower error (<strong>RMSE 0.067 vs. 0.51</strong>). Whether spoken
+      language keeps a tighter lid on its longest dependencies than written language is a harder
+      question: three of four matched language pairs point that way, but the effect does not
+      survive at the population level.
+    </p>
+    <div class="hero-links">
+      <a class="btn btn-primary" href="https://cdn.jsdelivr.net/gh/ai-inventor-papers/ai-invention-544c17-language-minimizes-dependency-distance@main/paper.pdf">Read the PDF</a>
+      <a class="btn btn-secondary" href="https://github.com/ai-inventor-papers/ai-invention-544c17-language-minimizes-dependency-distance">View the code</a>
+    </div>
+  </div>
+</header>
+
+<nav class="sectionnav" aria-label="Section navigation">
+  <div class="sectionnav-inner" id="navlinks">
+    <a href="#contributions">Contributions</a>
+    <a href="#method">Method</a>
+    <a href="#results">Results</a>
+    <a href="#gallery">Figures</a>
+    <a href="#limitations">Limitations</a>
+  </div>
+</nav>
+
+<main id="main">
+
+  <section id="contributions" aria-labelledby="contributions-h">
+    <h2 id="contributions-h">Contributions</h2>
+    <p class="section-lede">What the paper actually claims, stated once and directly.</p>
+    <div class="cards">
+      <div class="card">
+        <h3>A new tail-risk statistic</h3>
+        <p>The Generalized Pareto shape parameter &xi; is introduced as an orthogonal descriptor
+        of dependency distributions, with head-finality effects 1.9&times; stronger than for
+        mean dependency distance (MDD).</p>
+      </div>
+      <div class="card">
+        <h3>A register test, run honestly</h3>
+        <p>The hypothesis that spoken language has lighter tails is tested directly. It holds at
+        the matched-pair level (3 of 4 pairs significant after Holm correction) but not at the
+        population level, and the effect is threshold-sensitive.</p>
+      </div>
+      <div class="card">
+        <h3>&xi; against the existing power-law measure</h3>
+        <p>&xi; and the power-law exponent &alpha; are reciprocal parameterizations of the same
+        tail (r = &minus;0.73), yet &xi; predicts register far better in regression (AICc 26.7
+        vs. 63.4).</p>
+      </div>
+      <div class="card">
+        <h3>EVT brought into linguistics without reinventing it</h3>
+        <p>Peaks-over-threshold estimation, standard in finance and hydrology for three decades,
+        is adapted here alongside mixed-effects models and permutation baselines rather than a
+        wholly new framework.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="method" aria-labelledby="method-h">
+    <h2 id="method-h">Method</h2>
+    <p class="section-lede">What goes in, what happens to it, and what comes out.</p>
+
+    <figure class="method-figure">
+      <img src="figures/fig_evt_illustration_v0.jpg" alt="Three probability density curves illustrating the Generalized Pareto Distribution shape parameter. Left panel, negative xi, shows a bounded peaked curve with a hard maximum marked by a dashed line, labeled memory constraints. Center panel, xi equal to zero, shows smooth exponential decay with no upper bound implied, labeled no power law. Right panel, positive xi, shows a heavy tail that decays slowly toward high values, labeled linguistic flexibility.">
+      <figcaption>Illustration of the Generalized Pareto Distribution shape parameter &xi; and its interpretation. Left: &xi; &lt; 0 (bounded tail, hard maximum on dependency distance, typical of tightly structured languages). Center: &xi; = 0 (exponential decay, no power-law behavior). Right: &xi; &gt; 0 (unbounded power-law tail, possibility of very long dependencies, typical of flexible-order languages). The shape parameter directly captures tail heaviness independent of mean distance.</figcaption>
+    </figure>
+
+    <ol class="method-steps">
+      <li>
+        <h3>Data: 18 UD treebanks, one HuggingFace source</h3>
+        <p>Universal Dependencies v2.18 treebanks are pulled from the HuggingFace repository
+        <code>commul/universal_dependencies</code>, keeping treebanks with at least 500 sentences.
+        The result is 18 treebanks across 18 languages and 8 language families
+        (Indo-European, Afro-Asiatic, Japonic, Sino-Tibetan, Koreanic, Uralic, Turkic, creoles),
+        covering 33,030 sentences and 558,144 dependency arcs. Four treebanks form matched
+        spoken/written pairs in the same language: Slovenian, French, English and Turkish.</p>
+      </li>
+      <li>
+        <h3>Extracting and normalizing dependency distance</h3>
+        <p>For every arc in the CoNLL-U head column, dependency distance is the absolute linear
+        position difference between head and dependent, excluding the artificial ROOT arc. Each
+        distance is then divided by sentence length (DD_norm = DD / sentence length), the
+        standard control for the fact that longer sentences mechanically permit longer arcs.</p>
+      </li>
+      <li>
+        <h3>Fitting the tail: peaks-over-threshold</h3>
+        <p>For each treebank, a Generalized Pareto Distribution is fit to the values above the
+        75th percentile of normalized distance (with the 80th and 90th checked for sensitivity),
+        using maximum likelihood via <code>scipy.stats.genpareto</code>. The fitted shape
+        parameter &xi; is the paper's headline statistic: &xi; &lt; 0 means a hard upper bound
+        on dependency length, &xi; = 0 means exponential decay, &xi; &gt; 0 means an unbounded,
+        heavy tail. Confidence intervals come from 1,000 bootstrap resamples.</p>
+      </li>
+      <li>
+        <h3>A power-law baseline for comparison</h3>
+        <p>A power-law tail exponent &alpha; is fit to the same threshold-exceeding data
+        following Clauset et al. (2009), since &alpha; and &xi; are mathematically reciprocal
+        (&alpha; &asymp; 1/&xi;) and the paper needs to show &xi; is not just old wine in a new
+        bottle.</p>
+      </li>
+      <li>
+        <h3>Testing register and typology</h3>
+        <p>For the four matched spoken/written pairs, sentences are split into ten length-matched
+        deciles per register and compared with a paired Wilcoxon test, avoiding the
+        pseudo-replication error of treating individual arcs as independent observations. Linear
+        mixed-effects models then relate &xi; to register and typological features (head-finality,
+        word-order flexibility, Grambank morphosyntactic features), with language family as a
+        random intercept where the fit supports one.</p>
+      </li>
+      <li>
+        <h3>Checking that it generalizes</h3>
+        <p>Leave-one-family-out cross-validation holds out each of the 8 families in turn,
+        trains on the rest, and measures how well &xi; and MDD predict the held-out family.</p>
+      </li>
+    </ol>
+  </section>
+
+  <section id="results" aria-labelledby="results-h">
+    <h2 id="results-h">Results</h2>
+    <p class="section-lede">The paper's headline numbers, each against what it was measured on.</p>
+
+    <div class="results-list">
+      <div class="result-row">
+        <div class="result-headline">Head-finality correlates with &xi; more strongly than with MDD: <span class="num">&minus;0.55</span> vs. <span class="num">&minus;0.29</span></div>
+        <div class="result-sub">Partial Spearman &rho;, controlling for register and word-order flexibility, across 18 treebanks &mdash; a 1.9&times; effect-size difference.</div>
+      </div>
+      <div class="result-row">
+        <div class="result-headline">&xi; generalizes across language families far better than MDD: RMSE <span class="num">0.067</span> vs. <span class="num">0.51</span></div>
+        <div class="result-sub">Leave-one-family-out cross-validation, 8 family-level folds. Bootstrap 95% CI for &xi;: [0.043, 0.091]; for MDD: [0.330, 0.688].</div>
+      </div>
+      <div class="result-row">
+        <div class="result-headline">Matched-pair register effect: 3 of 4 language pairs significant after Holm correction</div>
+        <div class="result-sub">Decile-level Wilcoxon test on spoken vs. written. Slovenian p_Holm = 0.028, French p_Holm = 0.020, English p_Holm = 0.405 (n.s.), Turkish p_Holm = 0.441 (n.s.).</div>
+      </div>
+      <div class="result-row">
+        <div class="result-headline">The same effect does not hold at the population level: &rho; = <span class="num">&minus;0.52</span>, p_Holm = <span class="num">0.27</span></div>
+        <div class="result-sub">Spearman correlation between register and &xi; across 15 treebanks with register present, after Holm correction across 6 typological correlations. The paired t-test across all four language pairs gives t(3) = &minus;1.885, p = 0.156.</div>
+      </div>
+      <div class="result-row">
+        <div class="result-headline">&xi; and power-law &alpha; are reciprocal but not redundant: &rho; = <span class="num">&minus;0.728</span>, r&sup2; = <span class="num">0.49</span></div>
+        <div class="result-sub">Spearman correlation between the two tail parameterizations fit to the same threshold-exceeding data, across 18 treebanks.</div>
+      </div>
+      <div class="result-row">
+        <div class="result-headline">&xi; predicts register far better than &alpha; in regression: AICc <span class="num">26.7</span> vs. <span class="num">63.4</span></div>
+        <div class="result-sub">Univariate mixed-effects models predicting register from &xi;-only vs. &alpha;-only; the &xi;-only model carries essentially all the Akaike weight (1.000). A joint &xi;+&alpha; model is worse still (AICc 81.6).</div>
+      </div>
+      <div class="result-row">
+        <div class="result-headline">The register effect reverses at the 90th percentile threshold: &rho; = <span class="num">+0.035</span> (n.s.)</div>
+        <div class="result-sub">At the 75th percentile &rho; = &minus;0.523 (p = 0.045); at 80th, &rho; = &minus;0.384 (p = 0.137); at 90th the sign flips and the effect becomes negligible.</div>
+      </div>
+      <div class="result-row">
+        <div class="result-headline">Power-law fits actually win more often: better AIC in 12 of 18 treebanks (67%) vs. 6 for GPD</div>
+        <div class="result-sub">Goodness-of-fit comparison across all 18 treebanks, consistent with a two-regime model rather than a single pure-tail model.</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="gallery" aria-labelledby="gallery-h">
+    <h2 id="gallery-h">Figure gallery</h2>
+    <p class="section-lede">Click any figure to enlarge.</p>
+    <div class="gallery">
+      <figure>
+        <button class="thumb" type="button" data-full="figures/fig_evt_illustration_v0.jpg" data-alt="Three probability density curves illustrating the Generalized Pareto Distribution shape parameter. Left panel, negative xi, shows a bounded peaked curve with a hard maximum marked by a dashed line, labeled memory constraints. Center panel, xi equal to zero, shows smooth exponential decay with no upper bound implied, labeled no power law. Right panel, positive xi, shows a heavy tail that decays slowly toward high values, labeled linguistic flexibility." aria-label="Enlarge figure: Extreme Value Theory, Bounded vs Unbounded Tails">
+          <img src="figures/fig_evt_illustration_v0.jpg" alt="">
+        </button>
+        <figcaption>Illustration of the Generalized Pareto Distribution shape parameter &xi; and its interpretation. Left: &xi; &lt; 0 (bounded tail, hard maximum on dependency distance, typical of tightly structured languages). Center: &xi; = 0 (exponential decay, no power-law behavior). Right: &xi; &gt; 0 (unbounded power-law tail, possibility of very long dependencies, typical of flexible-order languages). The shape parameter directly captures tail heaviness independent of mean distance.</figcaption>
+      </figure>
+      <figure>
+        <button class="thumb" type="button" data-full="figures/fig_register_paired_wilcoxon_v0-1.png" data-alt="Four panel bar chart, one panel per language, Slovenian, French, English, Turkish, each showing the mean normalized dependency-distance difference between spoken and written registers with a confidence interval and significance marker. Slovenian and French are marked significant with an asterisk and bars offset from zero; English and Turkish are marked not significant with bars crossing zero." aria-label="Enlarge figure: Register Effects on Tail Index, Corrected Paired Analysis">
+          <img src="figures/fig_register_paired_wilcoxon_v0-1.png" alt="">
+        </button>
+        <figcaption>Decile-level Wilcoxon signed-rank test results across four matched spoken/written language pairs. Shown are raw p-values, Holm-corrected significance thresholds, and effect sizes (Spearman r). Slovenian and French reach significance after multiple-comparison correction (p_Holm &lt; 0.03); English and Turkish are non-significant. Error bars show 95% confidence intervals on the mean normalized dependency distance difference (spoken minus written). The paired t-test across all four languages yields p=0.156 (not significant), indicating the effect does not generalize to the population level.</figcaption>
+      </figure>
+      <figure>
+        <button class="thumb" type="button" data-full="figures/fig_lofo_validation_v0-1.png" data-alt="Scatter plot with error bars comparing leave-one-family-out RMSE for the tail-index xi on the x axis against mean dependency distance RMSE on the y axis, one point per of eight language families labeled by name and xi RMSE value. Points cluster well below the diagonal reference line and below the MDD median RMSE line, with Japonic and Sinitic lowest and Turkic and Afroasiatic highest." aria-label="Enlarge figure: Cross-Family Generalization, Leave-One-Family-Out RMSE">
+          <img src="figures/fig_lofo_validation_v0-1.png" alt="">
+        </button>
+        <figcaption>Leave-one-family-out cross-validation performance for tail-index &xi; versus mean dependency distance (MDD). Each of 8 family-level folds is shown as a point; error bars reflect 95% bootstrap confidence intervals on macro RMSE. &xi; achieves substantially lower absolute error (RMSE 0.067) than MDD (0.510), demonstrating better cross-family generalization. Per-family RMSE for &xi; ranges 0.024&ndash;0.120, indicating variable stability within smaller families.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section id="limitations" aria-labelledby="limitations-h">
+    <h2 id="limitations-h">Limitations</h2>
+    <p class="section-lede">What the paper says it does not show.</p>
+    <div class="limitations">
+      <ul>
+        <li><strong>Annotation heterogeneity.</strong> Flat/list/conj/appos arc handling varies
+        across UD treebanks. &xi; estimates shift by &plusmn;15.3% when these arc types are
+        excluded, versus only &plusmn;2.0% for MDD &mdash; a 7.5&times; sensitivity gap, meaning
+        some register-level &xi; differences may reflect annotator choices rather than genuine
+        linguistic variation.</li>
+        <li><strong>Small matched-pair sample.</strong> Only 4 language pairs have both registers
+        annotated, and they differ in family, genre, and register definition (task-oriented
+        dialogue, conversational interviews, learner speech, news writing). A universal
+        "spoken lighter-tail" claim needs larger, more homogeneous samples.</li>
+        <li><strong>Treebank size confound.</strong> The smallest treebank, Nigerian Pidgin, has
+        just 20 sentences and cannot support a stable tail estimate. Per-family LOFO RMSE varies
+        more than 5-fold, suggesting sample size and annotation quality dominate some family-level
+        effects.</li>
+        <li><strong>Threshold sensitivity.</strong> The choice of the 75th percentile threshold
+        is not fully principled. The register effect on &xi; reverses sign at the 90th
+        percentile, which is the opposite of what a robust memory-constraint effect should do if
+        it strengthens in the deepest tail.</li>
+        <li><strong>Correlational, not causal.</strong> All results are observational. Whether
+        head-finality causes tail shape, whether register differences reflect production
+        constraints or genre conventions, and whether memory limitations drive the pattern cannot
+        be settled without experimental manipulation or computational modeling.</li>
+      </ul>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-links">
+      <a href="https://cdn.jsdelivr.net/gh/ai-inventor-papers/ai-invention-544c17-language-minimizes-dependency-distance@main/paper.pdf">Paper PDF</a>
+      <a href="https://github.com/ai-inventor-papers/ai-invention-544c17-language-minimizes-dependency-distance">Code repository</a>
+    </div>
+    <div class="citation" tabindex="0">Tail Risk in Dependency Distance: A Generalized Pareto Analysis Across 18 Language Treebanks.
+Under review.</div>
+    <p class="footer-note">Data: Universal Dependencies v2.18, via commul/universal_dependencies on HuggingFace.</p>
+  </div>
+</footer>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-labelledby="lightbox-caption">
+  <button class="lightbox-close" id="lightbox-close" type="button" aria-label="Close enlarged figure">&times;</button>
+  <div class="lightbox-content">
+    <img id="lightbox-img" src="figures/fig_evt_illustration_v0.jpg" alt="">
+    <p class="lightbox-caption" id="lightbox-caption"></p>
+  </div>
+</div>
+
+<script>
+(function(){
+  "use strict";
+
+  // Sticky nav active-section tracking
+  var navLinks = Array.prototype.slice.call(document.querySelectorAll('#navlinks a'));
+  var sections = navLinks.map(function(a){ return document.getElementById(a.getAttribute('href').slice(1)); });
+
+  function updateActive(){
+    var pos = window.scrollY + 120;
+    var current = sections[0];
+    for (var i = 0; i < sections.length; i++){
+      if (sections[i] && sections[i].offsetTop <= pos) current = sections[i];
+    }
+    navLinks.forEach(function(a){
+      var target = document.getElementById(a.getAttribute('href').slice(1));
+      if (target === current) a.classList.add('active');
+      else a.classList.remove('active');
+    });
+  }
+  document.addEventListener('scroll', updateActive, { passive: true });
+  window.addEventListener('load', updateActive);
+  updateActive();
+
+  // Lightbox
+  var lightbox = document.getElementById('lightbox');
+  var lightboxImg = document.getElementById('lightbox-img');
+  var lightboxCaption = document.getElementById('lightbox-caption');
+  var closeBtn = document.getElementById('lightbox-close');
+  var lastFocused = null;
+
+  function openLightbox(btn){
+    lastFocused = btn;
+    var full = btn.getAttribute('data-full');
+    var alt = btn.getAttribute('data-alt');
+    var captionEl = btn.closest('figure').querySelector('figcaption');
+    lightboxImg.setAttribute('src', full);
+    lightboxImg.setAttribute('alt', alt);
+    lightboxCaption.textContent = captionEl ? captionEl.textContent : '';
+    lightbox.classList.add('open');
+    closeBtn.focus();
+    document.addEventListener('keydown', onKeydown);
+  }
+
+  function closeLightbox(){
+    lightbox.classList.remove('open');
+    document.removeEventListener('keydown', onKeydown);
+    if (lastFocused) lastFocused.focus();
+  }
+
+  function onKeydown(e){
+    if (e.key === 'Escape'){
+      closeLightbox();
+      return;
+    }
+    if (e.key === 'Tab'){
+      var focusables = [closeBtn];
+      var idx = focusables.indexOf(document.activeElement);
+      e.preventDefault();
+      closeBtn.focus();
+    }
+  }
+
+  document.querySelectorAll('.gallery .thumb').forEach(function(btn){
+    btn.addEventListener('click', function(){ openLightbox(btn); });
+  });
+
+  closeBtn.addEventListener('click', closeLightbox);
+
+  lightbox.addEventListener('click', function(e){
+    if (e.target === lightbox) closeLightbox();
+  });
+})();
+</script>
+
+</body>
+</html>
