@@ -1,0 +1,559 @@
+{
+  "metadata": {
+    "method_name": "GPD-shape (xi) vs power-law-exponent (alpha) tail indices for UD dependency distances",
+    "description": "Peaks-over-threshold extreme value analysis (Generalized Pareto MLE, our method) compared against a Clauset et al. (2009) power-law-exponent baseline, both fit to the same exceedances above the 75th/8...",
+    "n_treebanks_total": 18,
+    "n_treebanks_primary": 17,
+    "excluded_treebanks_small_n": [
+      "nap_rb"
+    ],
+    "bootstrap_resamples": 300,
+    "primary_threshold_quantile": 0.75,
+    "sensitivity_thresholds": [
+      0.75,
+      0.8,
+      0.9
+    ],
+    "unstable_ci_treebanks": [],
+    "mrl_plots_representative": {
+      "ar_padt": [
+        {
+          "quantile": 0.5,
+          "threshold": 0.03125,
+          "n_exceedances": 35603,
+          "mean_excess": 0.135074105075415
+        },
+        {
+          "quantile": 0.55,
+          "threshold": 0.035714,
+          "n_exceedances": 32113,
+          "mean_excess": 0.14500184529629748
+        },
+        {
+          "quantile": 0.6,
+          "threshold": 0.041667,
+          "n_exceedances": 28297,
+          "mean_excess": 0.15815421744354527
+        }
+      ],
+      "zh_gsd": [
+        {
+          "quantile": 0.5,
+          "threshold": 0.071429,
+          "n_exceedances": 23498,
+          "mean_excess": 0.17971675248957356
+        },
+        {
+          "quantile": 0.55,
+          "threshold": 0.083333,
+          "n_exceedances": 21079,
+          "mean_excess": 0.18757159262773374
+        },
+        {
+          "quantile": 0.6,
+          "threshold": 0.096774,
+          "n_exceedances": 19058,
+          "mean_excess": 0.19320364744464266
+        }
+      ],
+      "fr_gsd": [
+        {
+          "quantile": 0.5,
+          "threshold": 0.06383,
+          "n_exceedances": 23410,
+          "mean_excess": 0.14446679598462195
+        },
+        {
+          "quantile": 0.55,
+          "threshold": 0.071429,
+          "n_exceedances": 20826,
+          "mean_excess": 0.15423885345241523
+        },
+        {
+          "quantile": 0.6,
+          "threshold": 0.081081,
+          "n_exceedances": 18732,
+          "mean_excess": 0.16119224636984836
+        }
+      ],
+      "ja_gsd": [
+        {
+          "quantile": 0.5,
+          "threshold": 0.057143,
+          "n_exceedances": 23122,
+          "mean_excess": 0.11912925815240896
+        },
+        {
+          "quantile": 0.55,
+          "threshold": 0.064516,
+          "n_exceedances": 20753,
+          "mean_excess": 0.12487166361489903
+        },
+        {
+          "quantile": 0.6,
+          "threshold": 0.071429,
+          "n_exceedances": 18508,
+          "mean_excess": 0.1325568562783661
+        }
+      ]
+    },
+    "xi_vs_alpha_correlation": {
+      "rho": -0.7279411764705883,
+      "p": 0.0009236465346141361,
+      "ci_lower": -0.8953296001388539,
+      "ci_upper": -0.3803782113506093,
+      "n": 17
+    },
+    "xi_vs_alpha_regression": {
+      "slope": -0.5669488771445806,
+      "intercept": 2.3629275881856406,
+      "r_squared": 0.4897882117871076,
+      "p_value": 0.0017623129750463649
+    },
+    "correlation_matrix": [
+      {
+        "rho": -0.5233973683491399,
+        "p": 0.04525653875910755,
+        "ci_lower": -0.8166948182865548,
+        "ci_upper": -0.015203136746434179,
+        "n": 15,
+        "test": "xi_vs_register",
+        "p_holm_adjusted": 0.2715392325546453,
+        "significant_at_05": false
+      },
+      {
+        "rho": 0.45361105256925455,
+        "p": 0.08945440046484172,
+        "ci_lower": -0.07641647608050603,
+        "ci_upper": 0.7837583983307984,
+        "n": 15,
+        "test": "alpha_vs_register",
+        "p_holm_adjusted": 0.4472720023242086,
+        "significant_at_05": false
+      },
+      {
+        "rho": -0.4093137254901961,
+        "p": 0.10278434681514409,
+        "ci_lower": -0.7436600519760175,
+        "ci_upper": 0.08881087445081419,
+        "n": 17,
+        "test": "xi_vs_head_finality",
+        "p_holm_adjusted": 0.4472720023242086,
+        "significant_at_05": false
+      }
+    ],
+    "matched_pair_register_analysis": [
+      {
+        "language": "Slovenian",
+        "spoken_treebank": "sl_sst",
+        "written_treebank": "sl_ssj",
+        "caveat": null,
+        "status": "ok",
+        "xi_spoken": -0.3057258855006496,
+        "xi_written": -0.14907307217252724,
+        "delta_xi": -0.15665281332812236,
+        "delta_xi_ci_lower": -0.19828686073213536,
+        "delta_xi_ci_upper": -0.11398545053833746,
+        "alpha_spoken": 2.553866108715103,
+        "alpha_written": 2.455491258687997,
+        "delta_alpha": 0.09837485002710578,
+        "delta_alpha_ci_lower": 0.06411161258753409,
+        "delta_alpha_ci_upper": 0.12742089624357103,
+        "spoken_lighter_tail_xi": true,
+        "spoken_lighter_tail_alpha": true
+      },
+      {
+        "language": "French",
+        "spoken_treebank": "fr_rhapsodie",
+        "written_treebank": "fr_gsd",
+        "caveat": null,
+        "status": "ok",
+        "xi_spoken": -0.3454723126416309,
+        "xi_written": 0.15910768454557095,
+        "delta_xi": -0.5045799971872018,
+        "delta_xi_ci_lower": -0.5447436676167211,
+        "delta_xi_ci_upper": -0.46366580670410384,
+        "alpha_spoken": 2.5782559901324347,
+        "alpha_written": 2.279333001355625,
+        "delta_alpha": 0.29892298877680945,
+        "delta_alpha_ci_lower": 0.26484751940604706,
+        "delta_alpha_ci_upper": 0.33862116975932494,
+        "spoken_lighter_tail_xi": true,
+        "spoken_lighter_tail_alpha": true
+      },
+      {
+        "language": "English",
+        "spoken_treebank": "en_eslspok",
+        "written_treebank": "en_ewt",
+        "caveat": null,
+        "status": "ok",
+        "xi_spoken": -0.5137887849123166,
+        "xi_written": -0.22010827412185263,
+        "delta_xi": -0.293680510790464,
+        "delta_xi_ci_lower": -0.42282867608833036,
+        "delta_xi_ci_upper": -0.2527637406380376,
+        "alpha_spoken": 3.135119882863647,
+        "alpha_written": 2.4370329058928633,
+        "delta_alpha": 0.6980869769707838,
+        "delta_alpha_ci_lower": 0.6529520154121987,
+        "delta_alpha_ci_upper": 0.7429213995934613,
+        "spoken_lighter_tail_xi": true,
+        "spoken_lighter_tail_alpha": true
+      }
+    ],
+    "matched_pairs_spoken_lighter_xi": "4/4",
+    "matched_pairs_spoken_lighter_alpha": "3/4",
+    "mixed_effects_model_fits": {
+      "Model1_xi_only": {
+        "label": "Model1_xi_only",
+        "formula": "register_binary ~ xi",
+        "group_col": "family",
+        "method": "mixedlm_random_intercept",
+        "converged": true,
+        "loglik": -7.363158204292251,
+        "n_params": 4,
+        "n_obs": 15,
+        "aicc": 26.726316408584502,
+        "re_var_group": 0.001158830213822737,
+        "resid_var": 0.15513472389412727,
+        "fixed_effects": {
+          "Intercept": {
+            "coef": 0.11686914675754807,
+            "se": 0.1006347100500521,
+            "t": 1.1613204499662346,
+            "p": 0.24551160611880274
+          },
+          "xi": {
+            "coef": -0.6506028686454772,
+            "se": 0.33104443538246064,
+            "t": -1.9653037450813087,
+            "p": 0.04937909239887617
+          }
+        },
+        "r2_marginal": 0.20403652285629692,
+        "r2_conditional": 0.2099381515682299
+      },
+      "Model2_alpha_only": {
+        "label": "Model2_alpha_only",
+        "formula": "register_binary ~ alpha",
+        "group_col": "family",
+        "method": "ols_fixed_group_fallback",
+        "converged": true,
+        "loglik": -4.72213201510022,
+        "n_params": 9,
+        "n_obs": 15,
+        "aicc": 63.44426403020044,
+        "re_var_group": null,
+        "resid_var": 0.2354823271362387,
+        "fixed_effects": {
+          "Intercept": {
+            "coef": -2.259136849975706,
+            "se": 1.3745821037143162,
+            "t": -1.643508120665326,
+            "p": 0.14427825170486927
+          },
+          "alpha": {
+            "coef": 1.1308379956210617,
+            "se": 0.6437611574896738,
+            "t": 1.7566111009721814,
+            "p": 0.12240636749941847
+          }
+        },
+        "r2_marginal": 0.4380535375157941,
+        "r2_conditional": 0.4380535375157941
+      },
+      "Model3_xi_plus_alpha": {
+        "label": "Model3_xi_plus_alpha",
+        "formula": "register_binary ~ xi + alpha",
+        "group_col": "family",
+        "method": "ols_fixed_group_fallback",
+        "converged": true,
+        "loglik": -3.277462360699074,
+        "n_params": 10,
+        "n_obs": 15,
+        "aicc": 81.55492472139815,
+        "re_var_group": null,
+        "resid_var": 0.2265949190685181,
+        "fixed_effects": {
+          "Intercept": {
+            "coef": -0.8814832584331915,
+            "se": 1.8185876949987745,
+            "t": -0.484707589772725,
+            "p": 0.6450704722855516
+          },
+          "xi": {
+            "coef": -1.0850449725493456,
+            "se": 0.9611012318384229,
+            "t": -1.1289601309467052,
+            "p": 0.30202135584872974
+          },
+          "alpha": {
+            "coef": 0.7466226226785635,
+            "se": 0.7173630067681858,
+            "t": 1.0407877401459495,
+            "p": 0.33808443789225245
+          }
+        },
+        "r2_marginal": 0.5365103928143948,
+        "r2_conditional": 0.5365103928143948
+      }
+    },
+    "mixed_effects_model_comparison": [
+      {
+        "model": "Model1_xi_only",
+        "aicc": 26.726316408584502,
+        "delta_aicc": 0.0,
+        "akaike_weight": 0.9999999893622525,
+        "r2_marginal": 0.20403652285629692,
+        "r2_conditional": 0.2099381515682299,
+        "method": "mixedlm_random_intercept"
+      },
+      {
+        "model": "Model2_alpha_only",
+        "aicc": 63.44426403020044,
+        "delta_aicc": 36.71794762161594,
+        "akaike_weight": 1.0636505670007681e-08,
+        "r2_marginal": 0.4380535375157941,
+        "r2_conditional": 0.4380535375157941,
+        "method": "ols_fixed_group_fallback"
+      },
+      {
+        "model": "Model3_xi_plus_alpha",
+        "aicc": 81.55492472139815,
+        "delta_aicc": 54.82860831281365,
+        "akaike_weight": 1.2419925050154942e-12,
+        "r2_marginal": 0.5365103928143948,
+        "r2_conditional": 0.5365103928143948,
+        "method": "ols_fixed_group_fallback"
+      }
+    ],
+    "typology_controlled_models": {
+      "typology_only": {
+        "label": "typology_only",
+        "formula": "register_binary ~ head_finality_ratio",
+        "group_col": "family",
+        "method": "mixedlm_random_intercept",
+        "converged": true,
+        "loglik": -8.570147367859136,
+        "n_params": 4,
+        "n_obs": 15,
+        "aicc": 29.14029473571827,
+        "re_var_group": 0.0007821651814968398,
+        "resid_var": 0.18278838492950591,
+        "fixed_effects": {
+          "Intercept": {
+            "coef": -0.3249448911129457,
+            "se": 0.5749261572977798,
+            "t": -0.5651941331739448,
+            "p": 0.571941726717853
+          },
+          "head_finality_ratio": {
+            "coef": 1.0385581269147477,
+            "se": 1.027871929065554,
+            "t": 1.0103964293089593,
+            "p": 0.3123053979135516
+          }
+        },
+        "r2_marginal": 0.06351234508468709,
+        "r2_conditional": 0.06750257138260611
+      },
+      "typology_plus_xi": {
+        "label": "typology_plus_xi",
+        "formula": "register_binary ~ head_finality_ratio + xi",
+        "group_col": "family",
+        "method": "mixedlm_random_intercept",
+        "converged": true,
+        "loglik": -7.168386600157913,
+        "n_params": 5,
+        "n_obs": 15,
+        "aicc": 31.003439866982493,
+        "re_var_group": 0.0003292420668291118,
+        "resid_var": 0.15194331541846925,
+        "fixed_effects": {
+          "Intercept": {
+            "coef": 0.5443459024042412,
+            "se": 0.7190480072271962,
+            "t": 0.7570369390263052,
+            "p": 0.44902773235480054
+          },
+          "head_finality_ratio": {
+            "coef": -0.8372704134474789,
+            "se": 1.4127563005443924,
+            "t": -0.5926502774221177,
+            "p": 0.5534152240836459
+          },
+          "xi": {
+            "coef": -0.8701425588697902,
+            "se": 0.49582175351201013,
+            "t": -1.7549503479958004,
+            "p": 0.07926780106539714
+          }
+        },
+        "r2_marginal": 0.22219311912654935,
+        "r2_conditional": 0.22387488470060826
+      },
+      "typology_plus_alpha": {
+        "label": "typology_plus_alpha",
+        "formula": "register_binary ~ head_finality_ratio + alpha",
+        "group_col": "family",
+        "method": "ols_fixed_group_fallback",
+        "converged": true,
+        "loglik": -4.0425448227376055,
+        "n_params": 10,
+        "n_obs": 15,
+        "aicc": 83.08508964547521,
+        "re_var_group": null,
+        "resid_var": 0.25093022710124596,
+        "fixed_effects": {
+          "Intercept": {
+            "coef": -2.9658363467970403,
+            "se": 1.7003100410213345,
+            "t": -1.744291496988123,
+            "p": 0.13172640375816205
+          },
+          "head_finality_ratio": {
+            "coef": 1.911204157664376,
+            "se": 2.533536593316739,
+            "t": 0.7543621681668128,
+            "p": 0.47918193347547056
+          },
+          "alpha": {
+            "coef": 1.192601302325291,
+            "se": 0.669566190859964,
+            "t": 1.7811551995980586,
+            "p": 0.1251763159854593
+          }
+        },
+        "r2_marginal": 0.4867336263838151,
+        "r2_conditional": 0.4867336263838151
+      }
+    },
+    "typology_controlled_r2_deltas": {
+      "delta_r2_from_xi": 0.15637231331800217,
+      "delta_r2_from_alpha": 0.419231055001209
+    },
+    "threshold_sensitivity": [
+      {
+        "threshold_quantile": 0.75,
+        "n_treebanks": 17,
+        "xi_vs_register_rho": -0.5233973683491399,
+        "alpha_vs_register_rho": 0.45361105256925455,
+        "xi_vs_alpha_rho": -0.7279411764705883
+      },
+      {
+        "threshold_quantile": 0.8,
+        "n_treebanks": 17,
+        "xi_vs_register_rho": -0.3838247367893692,
+        "alpha_vs_register_rho": 0.5582905262390825,
+        "xi_vs_alpha_rho": -0.6666666666666667
+      },
+      {
+        "threshold_quantile": 0.9,
+        "n_treebanks": 17,
+        "xi_vs_register_rho": 0.034893157889942655,
+        "alpha_vs_register_rho": 0.5931836841290251,
+        "xi_vs_alpha_rho": 0.24509803921568632
+      }
+    ],
+    "register_effect_sign_flip_across_thresholds": true,
+    "outlier_treebanks": [
+      {
+        "treebank_id": "fr_gsd",
+        "family": "Indo-European",
+        "metric": "xi_75",
+        "value": 0.15910768454557095,
+        "standardized_residual": 2.259507148777611,
+        "note": "flagged via within-family standardization; manual syntactic inspection not automated in this pipeline"
+      },
+      {
+        "treebank_id": "en_eslspok",
+        "family": "Indo-European",
+        "metric": "alpha_75",
+        "value": 3.135119882863647,
+        "standardized_residual": 2.5394161228416317,
+        "note": "flagged via within-family standardization; manual syntactic inspection not automated in this pipeline"
+      }
+    ],
+    "narrative_summary": {
+      "a_xi_alpha_relationship": "Spearman rho(xi, alpha) = -0.7279411764705883; REDUNDANT (>0.7)",
+      "b_both_beat_either": "Model3 (xi+alpha) has higher Akaike weight than both single-predictor models: False",
+      "c_register_effect": "4/4 matched pairs show spoken-lighter-tail via xi; 3/4 via alpha (majority threshold = 3/4)",
+      "d_beyond_typology": {
+        "delta_r2_from_xi": 0.15637231331800217,
+        "delta_r2_from_alpha": 0.419231055001209
+      },
+      "e_typology_dissociation": [
+        {
+          "rho": -0.4093137254901961,
+          "p": 0.10278434681514409,
+          "ci_lower": -0.7436600519760175,
+          "ci_upper": 0.08881087445081419,
+          "n": 17,
+          "test": "xi_vs_head_finality",
+          "p_holm_adjusted": 0.4472720023242086,
+          "significant_at_05": false
+        },
+        {
+          "rho": 0.23529411764705882,
+          "p": 0.363295114375383,
+          "ci_lower": -0.2766451280325178,
+          "ci_upper": 0.6432034327634644,
+          "n": 17,
+          "test": "alpha_vs_head_finality",
+          "p_holm_adjusted": 1.0,
+          "significant_at_05": false
+        },
+        {
+          "rho": 0.25528465632155684,
+          "p": 0.378394056268132,
+          "ci_lower": -0.3184349109278445,
+          "ci_upper": 0.6921233068585682,
+          "n": 14,
+          "test": "xi_vs_grambank_composite",
+          "p_holm_adjusted": 1.0,
+          "significant_at_05": false
+        }
+      ],
+      "f_threshold_robustness": "Register-effect sign flip across 75/80/90th percentile thresholds: True"
+    },
+    "verdict": "PARTIALLY_CONFIRMS",
+    "seed": 20260907
+  },
+  "datasets": [
+    {
+      "dataset": "ud_treebanks",
+      "examples": [
+        {
+          "input": "{\"treebank_id\": \"ar_padt\", \"language\": \"Arabic\", \"family\": \"Afro-Asiatic\", \"register\": \"written\", \"n_sentences\": 1998, \"n_arcs\": 72207, \"primary_threshold_quantile\": 0.75}",
+          "output": "{\"xi_75\": 0.5622675224485536, \"xi_ci_lower\": 0.5417129323675696, \"xi_ci_upper\": 0.5818426432281152, \"alpha_75\": 1.9977546374668607, \"alpha_ci_lower\": 1.9853785719405026, \"alpha_ci_upper\": 2.0106276265...",
+          "metadata_treebank_id": "ar_padt",
+          "metadata_language": "Arabic",
+          "metadata_family": "Afro-Asiatic",
+          "metadata_register": "written",
+          "predict_our_method": "0.562268",
+          "predict_baseline": "1.997755"
+        },
+        {
+          "input": "{\"treebank_id\": \"en_eslspok\", \"language\": \"English\", \"family\": \"Indo-European\", \"register\": \"spoken\", \"n_sentences\": 1856, \"n_arcs\": 15023, \"primary_threshold_quantile\": 0.75}",
+          "output": "{\"xi_75\": -0.5137887849123166, \"xi_ci_lower\": -0.6355234108411152, \"xi_ci_upper\": -0.49962410401606144, \"alpha_75\": 3.135119882863647, \"alpha_ci_lower\": 3.093629685565691, \"alpha_ci_upper\": 3.17565111...",
+          "metadata_treebank_id": "en_eslspok",
+          "metadata_language": "English",
+          "metadata_family": "Indo-European",
+          "metadata_register": "spoken",
+          "predict_our_method": "-0.513789",
+          "predict_baseline": "3.135120"
+        },
+        {
+          "input": "{\"treebank_id\": \"en_ewt\", \"language\": \"English\", \"family\": \"Indo-European\", \"register\": \"written\", \"n_sentences\": 1913, \"n_arcs\": 30228, \"primary_threshold_quantile\": 0.75}",
+          "output": "{\"xi_75\": -0.22010827412185263, \"xi_ci_lower\": -0.2592512533320414, \"xi_ci_upper\": -0.18376507725481306, \"alpha_75\": 2.4370329058928633, \"alpha_ci_lower\": 2.414055072402791, \"alpha_ci_upper\": 2.459911...",
+          "metadata_treebank_id": "en_ewt",
+          "metadata_language": "English",
+          "metadata_family": "Indo-European",
+          "metadata_register": "written",
+          "predict_our_method": "-0.220108",
+          "predict_baseline": "2.437033"
+        }
+      ]
+    }
+  ]
+}
