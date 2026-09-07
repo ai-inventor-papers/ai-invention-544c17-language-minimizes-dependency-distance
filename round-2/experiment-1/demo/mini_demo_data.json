@@ -1,0 +1,68 @@
+{
+  "datasets": [
+    {
+      "examples": [
+        {
+          "metadata_treebank_id": "en_ewt",
+          "metadata_language": "English",
+          "metadata_language_family": "Indo-European",
+          "metadata_register": "written",
+          "metadata_sentence_length": 15,
+          "metadata_head_finality_ratio": 0.57,
+          "metadata_grambank_features": "{\"feature_1\": 0.5, \"feature_2\": 0.6}",
+          "output": "{\"normalized_distances\": [0.05, 0.08, 0.12, 0.15, 0.18, 0.22, 0.25, 0.30, 0.35, 0.42, 0.50, 0.65, 0.80, 1.0]}"
+        },
+        {
+          "metadata_treebank_id": "en_ewt",
+          "metadata_language": "English",
+          "metadata_language_family": "Indo-European",
+          "metadata_register": "written",
+          "metadata_sentence_length": 18,
+          "metadata_head_finality_ratio": 0.57,
+          "metadata_grambank_features": "{\"feature_1\": 0.5, \"feature_2\": 0.6}",
+          "output": "{\"normalized_distances\": [0.06, 0.09, 0.11, 0.14, 0.17, 0.21, 0.28, 0.32, 0.38, 0.45, 0.55, 0.70, 0.90]}"
+        },
+        {
+          "metadata_treebank_id": "en_ewt",
+          "metadata_language": "English",
+          "metadata_language_family": "Indo-European",
+          "metadata_register": "written",
+          "metadata_sentence_length": 12,
+          "metadata_head_finality_ratio": 0.57,
+          "metadata_grambank_features": "{\"feature_1\": 0.5, \"feature_2\": 0.6}",
+          "output": "{\"normalized_distances\": [0.04, 0.07, 0.10, 0.13, 0.16, 0.20, 0.24, 0.31, 0.40, 0.50, 0.65]}"
+        },
+        {
+          "metadata_treebank_id": "fr_gsd",
+          "metadata_language": "French",
+          "metadata_language_family": "Indo-European",
+          "metadata_register": "written",
+          "metadata_sentence_length": 14,
+          "metadata_head_finality_ratio": 0.48,
+          "metadata_grambank_features": "{\"feature_1\": 0.4, \"feature_2\": 0.7}",
+          "output": "{\"normalized_distances\": [0.06, 0.09, 0.12, 0.15, 0.19, 0.23, 0.27, 0.33, 0.40, 0.50, 0.60, 0.75]}"
+        },
+        {
+          "metadata_treebank_id": "fr_gsd",
+          "metadata_language": "French",
+          "metadata_language_family": "Indo-European",
+          "metadata_register": "written",
+          "metadata_sentence_length": 16,
+          "metadata_head_finality_ratio": 0.48,
+          "metadata_grambank_features": "{\"feature_1\": 0.4, \"feature_2\": 0.7}",
+          "output": "{\"normalized_distances\": [0.05, 0.08, 0.11, 0.14, 0.18, 0.22, 0.26, 0.31, 0.38, 0.47, 0.58, 0.72, 0.88]}"
+        },
+        {
+          "metadata_treebank_id": "sl_ssj",
+          "metadata_language": "Slovenian",
+          "metadata_language_family": "Indo-European",
+          "metadata_register": "written",
+          "metadata_sentence_length": 13,
+          "metadata_head_finality_ratio": 0.62,
+          "metadata_grambank_features": "{\"feature_1\": 0.45, \"feature_2\": 0.65}",
+          "output": "{\"normalized_distances\": [0.07, 0.10, 0.13, 0.16, 0.20, 0.24, 0.29, 0.35, 0.42, 0.52, 0.65, 0.82]}"
+        }
+      ]
+    }
+  ]
+}
